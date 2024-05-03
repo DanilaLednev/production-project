@@ -1,5 +1,4 @@
 
-import { Link } from 'react-router-dom'
 
 import './styles/index.scss'
 
@@ -12,13 +11,13 @@ import { Navbar } from 'widgets/Navbar'
 
 export const App = () => {
 
-  const { theme, toggleTheme } = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={ classNames( 'app', {}, [theme] ) }>
         <Navbar />
         <AppRouter />
-      <button onClick={ toggleTheme }>TOGGLER</button>
+      {/* <button onClick={ toggleTheme }>TOGGLER</button> */}
     </div>
   )
 }
