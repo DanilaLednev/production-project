@@ -6,6 +6,9 @@ import { BuildOptions } from './types/config';
 
 export function buildPlugin({paths, isDev}: BuildOptions ): webpack.WebpackPluginInstance[] {
 
+  const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+
+
   return  [
     new HTMLWebpackPlugin({
       template: paths.html
@@ -17,6 +20,8 @@ export function buildPlugin({paths, isDev}: BuildOptions ): webpack.WebpackPlugi
     }),
     new webpack.DefinePlugin({
       __IS_DEV__: JSON.stringify(isDev),
-    })
+    }),
+    new ReactRefreshWebpackPlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 }

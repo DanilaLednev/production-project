@@ -1,5 +1,4 @@
 import { Suspense } from 'react'
-import { useTranslation } from 'react-i18next'
 
 
 import './styles/index.scss'
