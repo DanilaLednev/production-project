@@ -1,3 +1,5 @@
+import { Suspense } from 'react'
+import { useTranslation } from 'react-i18next'
 
 
 import './styles/index.scss'
@@ -10,17 +12,20 @@ import { Sidebar } from 'widgets/Sidebar'
 
 
 
+
 export const App = () => {
 
   const { theme } = useTheme();
 
   return (
     <div className={ classNames( 'app', {}, [theme] ) }>
+      <Suspense fallback="">
         <Navbar />
         <div className='content-page'>
           <Sidebar />
           <AppRouter />
         </div>
+      </Suspense>
     </div>
   )
 }
