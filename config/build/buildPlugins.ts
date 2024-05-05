@@ -4,6 +4,7 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
+  // eslint-disable-next-line global-require
   const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
   return [
