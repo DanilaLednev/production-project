@@ -11,7 +11,8 @@
     "lint:ts": "eslint \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
-    "lint:scss:fix": "eslint \"**/*.scss\" --fix"
+    "lint:scss:fix": "eslint \"**/*.scss\" --fix",
+    "unit": "jest --config ./config/jest/jest.config.ts"
   },
   "keywords": [],
   "author": "",
@@ -19,8 +20,12 @@
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@babel/preset-env": "^7.16.11",
+    "@babel/preset-typescript": "^7.16.7",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.5",
+    "@stylistic/eslint-plugin-js": "^2.1.0",
+    "@stylistic/eslint-plugin-plus": "^2.1.0",
     "@svgr/webpack": "^6.2.1",
+    "@types/jest": "^27.4.1",
     "@types/node": "^17.0.21",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.11",
@@ -41,6 +46,7 @@
     "file-loader": "^6.2.0",
     "globals": "^15.1.0",
     "html-webpack-plugin": "^5.5.0",
+    "jest": "^27.5.1",
     "mini-css-extract-plugin": "^2.5.3",
     "react-refresh": "^0.12.0",
     "sass": "^1.49.9",

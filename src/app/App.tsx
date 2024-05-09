@@ -23,4 +23,3 @@ export const App = () => {
     </div>
   );
 };
-
