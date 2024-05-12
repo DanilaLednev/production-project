@@ -1,8 +1,8 @@
 import webpack from 'webpack';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { BuildOptions } from './types/config';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import { BuildOptions } from './types/config';
 
 export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPluginInstance[] {
   // eslint-disable-next-line global-require
@@ -23,7 +23,7 @@ export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPlug
     new ReactRefreshWebpackPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new BundleAnalyzerPlugin({
-      openAnalyzer: false
-    })
+      openAnalyzer: false,
+    }),
   ];
 }
