@@ -8,7 +8,7 @@ export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPlug
   // eslint-disable-next-line global-require
   const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
 
-  return [
+  const plugins = [
     new HTMLWebpackPlugin({
       template: paths.html,
     }),
@@ -21,9 +21,17 @@ export function buildPlugin({ paths, isDev }: BuildOptions): webpack.WebpackPlug
       __IS_DEV__: JSON.stringify(isDev),
     }),
     new ReactRefreshWebpackPlugin(),
-    new webpack.HotModuleReplacementPlugin(),
-    new BundleAnalyzerPlugin({
-      openAnalyzer: false,
-    }),
+
   ];
+
+  if (isDev) {
+    plugins.push(new webpack.HotModuleReplacementPlugin());
+    plugins.push(
+      new BundleAnalyzerPlugin({
+        openAnalyzer: false,
+      }),
+    );
+  }
+
+  return plugins;
 }
