@@ -1,4 +1,4 @@
-import { Suspense, useEffect } from 'react';
+import { Suspense, useEffect, useState } from 'react';
 
 import './styles/index.scss';
 
@@ -6,6 +6,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { useTheme } from 'app/providers/ThemeProvider';
 import { Navbar } from 'widgets/Navbar';
 import { Sidebar } from 'widgets/Sidebar';
+import { Modal } from 'shared/ui/Modal/Modal';
 import { AppRouter } from './providers/router';
 
 export const App = () => {
@@ -15,6 +16,7 @@ export const App = () => {
     <div className={classNames('app', {}, [theme])}>
       <Suspense fallback="">
         <Navbar />
+
         <div className="content-page">
           <Sidebar />
           <AppRouter />
