@@ -9,5 +9,8 @@
   "ГЛАВНАЯ СТРАНИЦА": "MAIN PAGE",
   "О СТРАНИЦЕ": "ABOUT PAGE",
   "Переключить": "Switch",
-  "Короткий язык": "En"
+  "Короткий язык": "En",
+  "Войти": "Sign in",
+  "Введите username": "Enter username",
+  "Введите пароль": "Enter password"
 }
