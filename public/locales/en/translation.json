@@ -3,7 +3,7 @@
   "Перевод": "Translate",
   "Главная страница": "Main page",
   "Язык": "Русский",
-  "Страница не найдена": "Page Not Founf",
+  "Страница не найдена": "Page Not Found",
   "Произошла непредвиденная ошибка": "An unexpected error occurred",
   "Обновить страницу": "Refresh the page",
   "ГЛАВНАЯ СТРАНИЦА": "MAIN PAGE",
@@ -12,5 +12,8 @@
   "Короткий язык": "En",
   "Войти": "Sign in",
   "Введите username": "Enter username",
-  "Введите пароль": "Enter password"
+  "Введите пароль": "Enter password",
+  "Форма авторизации": "Authorization form",
+  "Вы ввели неверный логин или пароль": "You entered an incorrect username or password",
+  "Выйти": "Sign out"
 }
