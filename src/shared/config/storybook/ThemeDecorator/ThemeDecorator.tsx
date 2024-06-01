@@ -8,3 +8,12 @@ export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => (
     </div>
   </ThemeProvider>
 );
+
+// export const ThemeDecorator = (theme: Theme) => (StoryComponent: Story) => {
+//   document.body.className = theme;
+//   return (
+//     <div className={`app ${theme}`}>
+//       <StoryComponent />
+//     </div>
+//   );
+// };

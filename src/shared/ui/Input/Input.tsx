@@ -77,9 +77,7 @@ export const Input = memo((props: InputProps) => {
             style={{ left: `${caretPosition * 9}px` }}
           />
         )}
-
       </div>
-
     </div>
   );
 });
