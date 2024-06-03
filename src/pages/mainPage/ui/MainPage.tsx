@@ -1,15 +1,8 @@
-import { BugButton } from 'app/providers/ErrorBoundary';
 import { useTranslation } from 'react-i18next';
-import { Input } from 'shared/ui/Input/Input';
-import { useState } from 'react';
+import { memo } from 'react';
 
-const MainPage = () => {
+const MainPage = memo(() => {
   const { t } = useTranslation();
-  const [value, setValue] = useState('');
-
-  const onChange = (value: string) => {
-    setValue(value);
-  };
 
   return (
     <div>
@@ -17,6 +10,6 @@ const MainPage = () => {
       {t('Главная страница')}
     </div>
   );
-};
+});
 
 export default MainPage;
