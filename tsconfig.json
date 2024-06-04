@@ -11,6 +11,7 @@
     // В какую спецификацию компилируем: для поддержки большинства браузеров
     "jsx": "react-jsx",
     "allowJs": true,
+    "strict": true,
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "moduleResolution": "node",
     // Для абсолютного импорта
@@ -18,6 +19,8 @@
     "paths": {
       "*": ["./src/*"]
     },
+//    "types": [ "node" ],
+//    "typeRoots": [ "../node_modules/@types" ],
     "esModuleInterop": true,
     //? esModuleInterop - позваляет работать пакетами, которые использеют
     //? common js как с обычными пакетами с помощью import (require() module.export) = common js

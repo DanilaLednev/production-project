@@ -20,7 +20,7 @@ import { getLoginError } from '../../model/selectors/getLoginError/getLoginError
 
 export interface LoginFormProps {
   className?: string,
-  onSuccess?: () => void,
+  onSuccess: () => void,
 }
 
 const initialReducers: ReducerList = {

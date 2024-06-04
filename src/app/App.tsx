@@ -15,7 +15,7 @@ export const App = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(userActions.setAuthData());
+    dispatch(userActions.initAuthData());
   }, [dispatch]);
 
   return (

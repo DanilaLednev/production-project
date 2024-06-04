@@ -1,12 +1,18 @@
 import webpack from 'webpack';
 
-import { BuildOptions } from './types/config';
+import { BuildOptions, BuildPaths } from './types/config';
 import { buildPlugin } from './buildPlugins';
 import { buildLoaders } from './buildLoaders';
 import { biuldResolvers } from './buildResolvers';
 import { buildDevServer } from './buildDevServer';
 
-export function buildWebpackConfig(options: BuildOptions): webpack.Configuration {
+export function buildWebpackConfig(options: {
+  mode: 'production' | 'development';
+  apiUrl: string;
+  port: number;
+  paths: BuildPaths;
+  isDev: boolean
+}): webpack.Configuration {
   const { paths, mode, isDev } = options;
 
   return {
