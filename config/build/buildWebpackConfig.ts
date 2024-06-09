@@ -11,7 +11,8 @@ export function buildWebpackConfig(options: {
   apiUrl: string;
   port: number;
   paths: BuildPaths;
-  isDev: boolean
+  isDev: boolean;
+  project: 'storybook' | 'frontend' | 'jest';
 }): webpack.Configuration {
   const { paths, mode, isDev } = options;
 
