@@ -1,4 +1,3 @@
-/* i18next-extract-disable-line */
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useTranslation } from 'react-i18next';
 import React, { memo } from 'react';
