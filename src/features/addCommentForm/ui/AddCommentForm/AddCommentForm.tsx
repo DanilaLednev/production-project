@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Input } from 'shared/ui/Input/Input';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { useSelector } from 'react-redux';
-import { useCallback } from 'react';
+import { memo, useCallback } from 'react';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import {
   DynamicModuleLoader,
@@ -45,7 +45,7 @@ const AddCommentForm = (props: AddCommentFormProps) => {
   }, [onSendComment, text, onCommentTextChange]);
 
   return (
-    <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
+    <DynamicModuleLoader reducers={reducers}>
       <div className={classNames(cls.AddCommentForm, {}, [className])}>
         <Input
           className={cls.input}
@@ -64,4 +64,4 @@ const AddCommentForm = (props: AddCommentFormProps) => {
   );
 };
 
-export default AddCommentForm;
+export default memo(AddCommentForm);

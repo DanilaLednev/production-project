@@ -14,14 +14,13 @@ const data = {
   username: 'admin',
 };
 
-describe('profileSlice', () => {
+describe('profileSlice.test', () => {
   test('test set readonly', () => {
     const state: DeepPartial<ProfileSchema> = { readonly: false };
     expect(profileReducer(
       state as ProfileSchema,
       profileActions.setReadonly(true),
-    ))
-      .toEqual({ readonly: true });
+    )).toEqual({ readonly: true });
   });
 
   test('test cancel edit', () => {
@@ -66,7 +65,7 @@ describe('profileSlice', () => {
     });
   });
 
-  test('test update profile service fulfilled', () => {
+  test('test update profile service fullfiled', () => {
     const state: DeepPartial<ProfileSchema> = {
       isLoading: true,
     };
