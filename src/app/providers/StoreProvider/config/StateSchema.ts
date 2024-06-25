@@ -2,21 +2,24 @@ import { CounterSchema } from 'entities/Counter';
 import { UserSchema } from 'entities/User';
 import { LoginSchema } from 'features/AuthByUsername';
 import {
-  AnyAction, EnhancedStore, Reducer, ReducersMapObject,
+  AnyAction,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { CombinedState } from 'redux';
 import { ProfileSchema } from 'entities/Profile';
 import { AxiosInstance } from 'axios';
-import { To } from 'react-router-dom';
-import { NavigateOptions } from 'react-router';
 import { ArticleDetailsSchema } from 'entities/Aritcle';
 import { ArticleDetailsCommentsSchema } from 'pages/ArticleDetailsPage';
 import { AddCommentFormSchema } from 'features/addCommentForm';
 import { ArticlePageSchema } from 'pages/AtriclesPage';
+import { UISchema } from 'features/UI';
 
 export interface StateSchema {
   counter: CounterSchema,
   user: UserSchema,
+  ui: UISchema,
 
   // Асинхронные редюсеры
   loginForm?: LoginSchema,

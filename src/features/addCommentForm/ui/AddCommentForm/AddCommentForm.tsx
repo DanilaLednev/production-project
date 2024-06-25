@@ -50,7 +50,7 @@ const AddCommentForm = (props: AddCommentFormProps) => {
         <Input
           className={cls.input}
           placeholder={t('Введите текст комментария')}
-          value={text || ''}
+          value={text}
           onChange={onCommentTextChange}
         />
         <Button
