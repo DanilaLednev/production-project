@@ -15,7 +15,7 @@ import {
 } from '../../model/slice/addCommentFormSlice';
 import cls from './AddCommentForm.module.scss';
 import {
-  getAddCommentFormError,
+  // getAddCommentFormError,
   getAddCommentFormText,
 } from '../../model/selectors/addCommentFormSelectors';
 
@@ -32,7 +32,7 @@ const AddCommentForm = (props: AddCommentFormProps) => {
   const { className, onSendComment } = props;
   const { t } = useTranslation();
   const text = useSelector(getAddCommentFormText);
-  const error = useSelector(getAddCommentFormError);
+  // const error = useSelector(getAddCommentFormError);
   const dispatch = useAppDispatch();
 
   const onCommentTextChange = useCallback((value: string) => {
@@ -50,7 +50,7 @@ const AddCommentForm = (props: AddCommentFormProps) => {
         <Input
           className={cls.input}
           placeholder={t('Введите текст комментария')}
-          value={text}
+          value={text || ''}
           onChange={onCommentTextChange}
         />
         <Button
