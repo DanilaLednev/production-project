@@ -10,6 +10,9 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useSelector } from 'react-redux';
 import { Page } from 'widgets/Page/Page';
+import { ArticlePageFilters } from 'pages/AtriclesPage/ui/ArticlePageFilters/ArticlePageFilters';
+import { useSearchParams } from 'react-router-dom';
+import cls from './ArticlesPage.module.scss';
 import {
   articlePageActions,
   articlePageReducer,
@@ -48,26 +51,25 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const hasMore = useSelector(getArticlesPageHasMore);
   const inited = useSelector(getArticlePageInited);
 
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlePageActions.setView(view));
-  }, [dispatch]);
+  const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());
   }, [dispatch]);
 
   useInitialEffect(() => {
-    dispatch(initArticlePage());
+    dispatch(initArticlePage(searchParams));
   });
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
       <Page
         onScrollEnd={onLoadNextPart}
-        className={classNames('', {}, [className])}
+        className={classNames(cls.ArticlesPage, {}, [className])}
       >
-        <ArticleViewSelector view={view} onViewClick={onChangeView} />
+        <ArticlePageFilters />
         <ArticleList
+          className={cls.list}
           isLoading={isLoading}
           view={view}
           articles={articles}
