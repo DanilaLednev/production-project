@@ -4,4 +4,6 @@ export { ArticleDetailsPageAsync as ArticleDetailsPage };
 
 export { ArticleDetailsCommentsSchema } from './model/types/ArticleDetailsCommentsSchema';
 
-// export { getArticleCommentsIsLoading, getArticleCommentsError } from './model/selectors/comments';
+export { ArticleDetailsRecommendationsSchema } from './model/types/ArticleDetailsRecommendationsSchema';
+
+export { ArticleDetailsPageSchema } from './model/types';
