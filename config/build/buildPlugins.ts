@@ -2,6 +2,7 @@ import webpack from 'webpack';
 import HTMLWebpackPlugin from 'html-webpack-plugin';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
+import CopyPlugin from 'copy-webpack-plugin';
 import { BuildOptions } from './types/config';
 
 export function buildPlugin({
@@ -25,7 +26,11 @@ export function buildPlugin({
       __PROJECT__: JSON.stringify(project),
     }),
     new ReactRefreshWebpackPlugin(),
-
+    new CopyPlugin({
+      patterns: [
+        { from: paths.locales, to: paths.buildLocales },
+      ],
+    }),
   ];
 
   if (isDev) {
