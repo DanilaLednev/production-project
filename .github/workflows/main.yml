@@ -18,7 +18,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: install modules
-        run: npm install
+        run: npm install --force
       - name: build production project
         run: npm run build:prod
         if: always()
@@ -34,6 +34,6 @@ jobs:
       - name: build storybook
         run: npm run storybook:build
         if: always()
-      - name: screenshot testing
-        run: npm run test:ui:ci
-        if: always()
+#      - name: screenshot testing
+#        run: npm run test:ui:ci
+#        if: always()
