@@ -8,8 +8,16 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:i18next/recommended',
+    "@feature-sliced",
   ],
   parser: '@typescript-eslint/parser',
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
   parserOptions: {
     ecmaFeatures: {
       jsx: true,
@@ -58,6 +66,8 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-undef': 'off',
     'react/no-array-index-key': 'off',
+    'boundaries/element-types': 'warn',
+    'import/no-internal-modules': 'warn',
   },
   globals: {
     __IS_DEV__: true,

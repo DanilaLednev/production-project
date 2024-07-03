@@ -1,23 +1,17 @@
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useTranslation } from 'react-i18next';
 import { memo, useCallback } from 'react';
+import { useTranslation } from 'react-i18next';
+import { useSelector } from 'react-redux';
+import { useSearchParams } from 'react-router-dom';
+import { ArticlePageFilters } from 'pages/AtriclesPage/ui/ArticlePageFilters/ArticlePageFilters';
+import { Page } from 'widgets/Page/Page';
 import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Aritcle';
+import { classNames } from 'shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
   ReducerList,
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useSelector } from 'react-redux';
-import { Page } from 'widgets/Page/Page';
-import { ArticlePageFilters } from 'pages/AtriclesPage/ui/ArticlePageFilters/ArticlePageFilters';
-import { useSearchParams } from 'react-router-dom';
-import cls from './ArticlesPage.module.scss';
-import {
-  articlePageActions,
-  articlePageReducer,
-  getArticles,
-} from '../../model/slices/ArticlePageSlice';
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
 import {
   getArticlePageInited,
   getArticlesPageError,
@@ -30,6 +24,12 @@ import {
   fetchNextArticlesPage,
 } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
+import {
+  articlePageActions,
+  articlePageReducer,
+  getArticles,
+} from '../../model/slices/ArticlePageSlice';
+import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
   className?: string;
