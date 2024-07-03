@@ -11,8 +11,8 @@ import { getUserAuthData } from 'entities/User';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
-import { Text } from 'shared/ui/Text/Text';
 import { HStack } from 'shared/ui/Stack/HStack/HStack';
+import { Text } from 'shared/ui/Text/Text';
 
 interface ProfilePageHeaderProps {
   className?: string

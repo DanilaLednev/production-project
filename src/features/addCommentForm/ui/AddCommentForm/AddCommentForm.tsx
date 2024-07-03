@@ -9,6 +9,7 @@ import {
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Input } from 'shared/ui/Input/Input';
+import { HStack } from 'shared/ui/Stack';
 import {
   // getAddCommentFormError,
   getAddCommentFormText,
@@ -18,7 +19,6 @@ import {
   addCommentFormReducer,
 } from '../../model/slice/addCommentFormSlice';
 import cls from './AddCommentForm.module.scss';
-import { HStack } from 'shared/ui/Stack';
 
 export interface AddCommentFormProps {
   className?: string;

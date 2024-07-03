@@ -4,10 +4,10 @@ import { LangSwitcher } from 'widgets/LangSwitcher';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { Button, ButtonSize, ButtonTheme } from 'shared/ui/Button/Button';
+import { VStack } from 'shared/ui/Stack/VStack/VStack';
 import { getSidebarItems } from '../../model/selectors/getSidebarItems';
 import { SidebarItem } from '../SidebarItem/SidebarItem';
 import cls from './Sidebar.module.scss';
-import { VStack } from 'shared/ui/Stack/VStack/VStack';
 
 interface SidebarProps {
   className?: string
@@ -31,7 +31,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
   )), [collapsed, sidebarItemsList]);
 
   return (
-    <menu
+    <section
       data-testid="sidebar"
       className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])}
     >
@@ -45,7 +45,7 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
       >
         { collapsed ? '>' : '<' }
       </Button>
-      <VStack gap="8" className={cls.items}>
+      <VStack role="navigation" gap="8" className={cls.items}>
         {itemList}
       </VStack>
       <div className={cls.switchers}>
@@ -55,6 +55,6 @@ export const Sidebar = memo(({ className }: SidebarProps) => {
           className={cls.lang}
         />
       </div>
-    </menu>
+    </section>
   );
 });

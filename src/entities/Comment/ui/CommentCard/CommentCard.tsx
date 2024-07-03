@@ -5,9 +5,9 @@ import { classNames } from 'shared/lib/classNames/classNames';
 import { AppLink } from 'shared/ui/AppLink/AppLink';
 import { Avatar } from 'shared/ui/Avatar/Avatar';
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton';
+import { VStack } from 'shared/ui/Stack';
 import { Text } from 'shared/ui/Text/Text';
 import cls from './CommentCard.module.scss';
-import { VStack } from 'shared/ui/Stack';
 
 interface CommentCardProps {
   className?: string;
