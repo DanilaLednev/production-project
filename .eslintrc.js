@@ -54,7 +54,7 @@ module.exports = {
       'error',
       {
         markupOnly: true,
-        ignoreAttribute: ['as','role','data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap'],
+        ignoreAttribute: ['as','role','data-testid', 'to', 'target', 'justify', 'align', 'direction', 'gap', 'refName'],
       },
     ],
     'linebreak-style': 'off',
@@ -65,6 +65,7 @@ module.exports = {
     'react-hooks/exhaustive-deps': 'error', // Checks effect dependencies
     'no-param-reassign': 'off',
     'no-undef': 'off',
+    'arrow-body-style': 'off',
     'react/no-array-index-key': 'off',
     'boundaries/element-types': 'warn',
     'import/no-internal-modules': 'warn',
