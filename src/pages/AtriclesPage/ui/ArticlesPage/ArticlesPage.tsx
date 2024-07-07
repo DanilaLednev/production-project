@@ -1,10 +1,7 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useSelector } from 'react-redux';
 import { useSearchParams } from 'react-router-dom';
-import { ArticlePageFilters } from 'pages/AtriclesPage/ui/ArticlePageFilters/ArticlePageFilters';
 import { Page } from 'widgets/Page/Page';
-import { ArticleList, ArticleView, ArticleViewSelector } from 'entities/Aritcle';
 import { classNames } from 'shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -12,23 +9,11 @@ import {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import {
-  getArticlePageInited,
-  getArticlesPageError,
-  getArticlesPageHasMore,
-  getArticlesPageIsLoading,
-  getArticlesPageNum,
-  getArticlesPageView,
-} from '../../model/selectors/articlesPageSelectors';
-import {
-  fetchNextArticlesPage,
-} from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
 import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
-import {
-  articlePageActions,
-  articlePageReducer,
-  getArticles,
-} from '../../model/slices/ArticlePageSlice';
+import { articlePageReducer } from '../../model/slices/ArticlePageSlice';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {
@@ -43,14 +28,6 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const { className } = props;
   const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
-  const articles = useSelector(getArticles.selectAll);
-  const isLoading = useSelector(getArticlesPageIsLoading);
-  const error = useSelector(getArticlesPageError);
-  const view = useSelector(getArticlesPageView);
-  const page = useSelector(getArticlesPageNum);
-  const hasMore = useSelector(getArticlesPageHasMore);
-  const inited = useSelector(getArticlePageInited);
-
   const [searchParams] = useSearchParams();
 
   const onLoadNextPart = useCallback(() => {
@@ -68,12 +45,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
         className={classNames(cls.ArticlesPage, {}, [className])}
       >
         <ArticlePageFilters />
-        <ArticleList
-          className={cls.list}
-          isLoading={isLoading}
-          view={view}
-          articles={articles}
-        />
+        <ArticleInfiniteList className={cls.list} />
       </Page>
     </DynamicModuleLoader>
   );
