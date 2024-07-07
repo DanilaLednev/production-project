@@ -50,6 +50,7 @@ export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps)
                 <Button
                   theme={ButtonTheme.OUTLINE}
                   onClick={onEdit}
+                  data-testid="EditableProfileCardHeaderButton.EditButton"
                 >
                   {t('Редактировать')}
                 </Button>
@@ -58,6 +59,7 @@ export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps)
                   <Button
                     theme={ButtonTheme.OUTLINE_RED}
                     onClick={onCancelEdit}
+                    data-testid="EditableProfileCardHeaderButton.CancelButton"
                   >
                     {t('Отменить')}
                   </Button>
@@ -65,6 +67,7 @@ export const EditableProfileCardHeader = (props: EditableProfileCardHeaderProps)
                   <Button
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSave}
+                    data-testid="EditableProfileCardHeaderButton.SaveButton"
                   >
                     {t('Сохранить')}
                   </Button>
