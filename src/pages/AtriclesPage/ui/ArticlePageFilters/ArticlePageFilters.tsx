@@ -5,12 +5,11 @@ import {
   fetchArticleList,
 } from 'pages/AtriclesPage/model/services/fetchArticlesList/fetchArticlesList';
 import {
-  ArticleSortFiled,
+  ArticleSortFiled, ArticleType,
   ArticleTypeTabs,
   ArticleView,
   ArticleViewSelector,
 } from 'entities/Aritcle';
-import { ArticleType } from 'entities/Aritcle/model/types/article';
 import { ArticleSortSelector } from 'entities/Aritcle/ui/ArticleSortSelector/ArticleSortSelector';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';

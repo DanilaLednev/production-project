@@ -2,16 +2,9 @@ export {
   ArticleDetails,
 } from './ui/ArticleDetails/ArticleDetails';
 
-export {
-  Article,
-  ArticleSortFiled,
-  ArticleView,
-  ArticleType,
-} from './model/types/article';
+export type { Article } from './model/types/article';
 
-export {
-  ArticleDetailsSchema,
-} from './model/types/articleDetailsSchema';
+export type { ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 
 export {
   ArticleList,
@@ -32,3 +25,6 @@ export {
 export {
   getArticleDetailsData,
 } from './model/selectors/articleDetails';
+export { ArticleSortFiled } from './model/consts/articleConsts';
+export { ArticleView } from './model/consts/articleConsts';
+export { ArticleType } from './model/consts/articleConsts';

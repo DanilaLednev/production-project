@@ -4,4 +4,4 @@ export {
   ArticlesPageAsync as ArticlesPage,
 };
 
-export { ArticlePageSchema } from './model/types/articlePageSchema';
+export type { ArticlePageSchema } from './model/types/articlePageSchema';

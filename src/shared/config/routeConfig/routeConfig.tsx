@@ -9,7 +9,8 @@ import { ForbiddenPage } from 'pages/ForbiddenPage';
 import { MainPage } from 'pages/mainPage';
 import { NotFoundPage } from 'pages/notFoundPage';
 import { ProfilePage } from 'pages/ProfilePage';
-import { UserRole } from 'entities/User/model/types/user';
+
+import { UserRole } from 'entities/User/model/consts/userConsts';
 
 export type AppRouteProps = RouteProps & {
   authOnly?: boolean;

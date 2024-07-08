@@ -9,11 +9,11 @@ import { Button, ButtonTheme } from 'shared/ui/Button/Button';
 import { Card } from 'shared/ui/Card/Card';
 import { Icon } from 'shared/ui/Icon/Icon';
 import { Text } from 'shared/ui/Text/Text';
+import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import {
   Article,
-  ArticleBlockType,
   ArticleTextBlock,
-  ArticleView,
+
 } from '../../model/types/article';
 import {
   ArticleTextBlockComponents,

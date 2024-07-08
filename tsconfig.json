@@ -15,6 +15,7 @@
     // Компилятор будет обрабатывать не только TS файлы, но и JS файлы
     "moduleResolution": "node",
     // Для абсолютного импорта
+    "isolatedModules": true,
     "baseUrl": ".",
     "paths": {
       "*": ["./src/*"]
@@ -29,7 +30,7 @@
     // console.log(Moment);
     // c флагом результат [object Object]
     // console.log(Moment);
-    "allowSyntheticDefaultImports": true,
+    "allowSyntheticDefaultImports": true
     // Если какая-либо библиотека не имеет default import,
     // лоадеры вроде ts-loader или babel-loader автоматически создают их
     // вместо такого импорта
@@ -39,7 +40,7 @@
   },
   "ts-node": {
     "compilerOptions": {
-      "module": "CommonJS",
+      "module": "CommonJS"
       // "paths": {
       //   "src/*": [ "app/src/*" ]
       // }
@@ -49,5 +50,5 @@
     "./config/jest/setupTest.ts",
     "./src/**/*.ts",
     "./src/**/*.tsx"
-  ],
+  ]
 }
