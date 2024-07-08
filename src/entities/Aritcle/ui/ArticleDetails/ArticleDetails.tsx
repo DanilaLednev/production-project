@@ -43,7 +43,6 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
   const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
   const isLoading = useSelector(getArticleDetailsIsLoading);
-  // const isLoading = true;
   const error = useSelector(getArticleDetailsError);
   const article = useSelector(getArticleDetailsData);
 
@@ -122,7 +121,7 @@ export const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
   return (
     <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-      <VStack gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
+      <VStack max gap="16" className={classNames(cls.ArticleDetails, {}, [className])}>
         {content}
       </VStack>
     </DynamicModuleLoader>

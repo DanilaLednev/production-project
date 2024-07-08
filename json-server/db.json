@@ -578,15 +578,22 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "role": "ADMIN",
+      "roles": ["ADMIN"],
       "avatar": "https://cdn.metatime.com/landing/blog/1686575019blobid0.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "role": "USER",
+      "roles": ["USER"],
       "avatar": "https://thumbs.dreamstime.com/b/hacker-illustration-working-computer-laptop-engulfed-binary-code-85636052.jpg"
+    },
+    {
+    "id": "3",
+    "username": "manager",
+    "password": "123",
+    "roles": ["MANAGER"],
+    "avatar": "https://profchoice.ru/wp-content/uploads/2017/10/iStock_000013749421Medium-1024x682-e1508770941336.jpg"
     }
   ],
   "profile": [
