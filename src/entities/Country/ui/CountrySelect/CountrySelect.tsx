@@ -1,8 +1,6 @@
 import { memo, useCallback, useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { ListBox } from 'shared/ui/ListBox/ListBox';
-import { Select } from 'shared/ui/Select/Select';
+import { ListBox } from 'shared/ui/Popups/ui/ListBox/ListBox';
 import { Country } from '../../model/types/country';
 
 interface CountrySelectProps {
@@ -37,7 +35,6 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
   const options = useMemo(() => Object.entries(Country).map((val) => ({ value: val[0], content: val[1] })), []);
 
   return (
-
     <ListBox
       onChange={onChangeHandler}
       value={value}
@@ -47,15 +44,5 @@ export const CountrySelect = memo((props: CountrySelectProps) => {
       readonly={readOnly}
       direction="top right"
     />
-
-  // <Select
-  //   className={classNames('', {}, [className])}
-  //   label={t('Укажите страну')}
-  //   options={options}
-  //   value={value}
-  //   readOnly={readOnly}
-  //   onChange={onChangeHandler}
-  // />
-
   );
 });
