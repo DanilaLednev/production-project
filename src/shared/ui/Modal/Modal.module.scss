@@ -10,6 +10,9 @@
   pointer-events: none;
   z-index: -1;
   color: var(--primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .overlay {
@@ -43,6 +46,6 @@
 
 .isClosing {
   .content {
-    // transform: scale(0.2);
+    transform: scale(0.2);
   }
 }
