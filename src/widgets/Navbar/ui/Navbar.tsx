@@ -20,9 +20,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const { t } = useTranslation();
   const [isAuthModal, setIsAuthModal] = useState(false);
   const authData = useSelector(getUserAuthData);
-  // const dispatch = useDispatch();
-  // const isAdmin = useSelector(isUserAdmin);
-  // const isManager = useSelector(isUserManager);
 
   const onCloseModal = useCallback(() => {
     setIsAuthModal(false);
@@ -31,12 +28,6 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
   }, []);
-
-  // const onLogout = useCallback(() => {
-  //   dispatch(userActions.logout());
-  // }, [dispatch]);
-
-  // const isAdminPanelAvailable = isAdmin || isManager;
 
   if (authData) {
     return (
