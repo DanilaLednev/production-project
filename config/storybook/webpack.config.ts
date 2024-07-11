@@ -17,6 +17,18 @@ export default ({ config }: {config: webpack.Configuration}) => {
   // config.resolve.modules = [paths.src, 'node_modules'];
   config!.resolve!.modules!.push(paths.src);
   config!.resolve!.extensions!.push('.ts', '.tsx');
+  // config!.resolve!.alias = { '@': paths.src };
+  // config!.resolve!.alias = { '@': path.resolve(__dirname, '..', '..', 'src') };
+
+  config!.resolve!.alias = {
+    ...config!.resolve!.alias,
+    '@/shared': path.resolve(__dirname, '..', '..', 'src', 'shared'),
+    '@/entities': path.resolve(__dirname, '..', '..', 'src', 'entities'),
+    '@/features': path.resolve(__dirname, '..', '..', 'src', 'features'),
+    '@/widgets': path.resolve(__dirname, '..', '..', 'src', 'widgets'),
+    '@/pages': path.resolve(__dirname, '..', '..', 'src', 'pages'),
+    '@/app': path.resolve(__dirname, '..', '..', 'src', 'app'),
+  };
 
   if (config.module?.rules) {
     //   eslint-disable-next-line no-param-reassign
