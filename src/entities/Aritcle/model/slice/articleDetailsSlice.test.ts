@@ -1,6 +1,6 @@
-import { ArticleDetailsSchema } from 'entities/Aritcle';
-import { fetchArticleById } from 'entities/Aritcle/model/sevices/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from 'entities/Aritcle/model/slice/articleDetailsSlice';
+import { ArticleDetailsSchema } from '@/entities/Aritcle';
+import { fetchArticleById } from '@/entities/Aritcle/model/sevices/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '@/entities/Aritcle/model/slice/articleDetailsSlice';
 
 const data = {
   id: '1',

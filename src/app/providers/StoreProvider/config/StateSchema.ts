@@ -3,16 +3,16 @@ import {
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { CombinedState } from 'redux';
-import { ArticleDetailsPageSchema } from 'pages/ArticleDetailsPage';
-import { ArticlePageSchema } from 'pages/AtriclesPage';
-import { AddCommentFormSchema } from 'features/addCommentForm';
-import { LoginSchema } from 'features/AuthByUsername';
-import { ProfileSchema } from 'features/editableProfileCard';
-import { UISchema } from 'features/UI';
-import { ArticleDetailsSchema } from 'entities/Aritcle';
-import { CounterSchema } from 'entities/Counter';
-import { UserSchema } from 'entities/User';
-import { rtkApi } from 'shared/api/rtkApi';
+import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
+import { ArticlePageSchema } from '@/pages/AtriclesPage';
+import { AddCommentFormSchema } from '@/features/addCommentForm';
+import { LoginSchema } from '@/features/AuthByUsername';
+import { ProfileSchema } from '@/features/editableProfileCard';
+import { UISchema } from '@/features/UI';
+import { ArticleDetailsSchema } from '@/entities/Aritcle';
+import { CounterSchema } from '@/entities/Counter';
+import { UserSchema } from '@/entities/User';
+import { rtkApi } from '@/shared/api/rtkApi';
 
 export interface StateSchema {
   counter: CounterSchema,

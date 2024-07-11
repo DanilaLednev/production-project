@@ -3,21 +3,21 @@ import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import {
   fetchArticleList,
-} from 'pages/AtriclesPage/model/services/fetchArticlesList/fetchArticlesList';
+} from '@/pages/AtriclesPage/model/services/fetchArticlesList/fetchArticlesList';
 import {
   ArticleSortFiled, ArticleType,
   ArticleTypeTabs,
   ArticleView,
   ArticleViewSelector,
-} from 'entities/Aritcle';
-import { ArticleSortSelector } from 'entities/Aritcle/ui/ArticleSortSelector/ArticleSortSelector';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useDebounce } from 'shared/lib/hooks/useDebounce/useDebounce';
-import { SortOrder } from 'shared/types';
-import { Card } from 'shared/ui/Card/Card';
-import { Input } from 'shared/ui/Input/Input';
-import { Tabs, TabsItem } from 'shared/ui/Tabs/Tabs';
+} from '@/entities/Aritcle';
+import { ArticleSortSelector } from '@/entities/Aritcle/ui/ArticleSortSelector/ArticleSortSelector';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { SortOrder } from '@/shared/types';
+import { Card } from '@/shared/ui/Card/Card';
+import { Input } from '@/shared/ui/Input/Input';
+import { Tabs, TabsItem } from '@/shared/ui/Tabs/Tabs';
 import {
   getArticlesPageIsLoading,
   getArticlesPageOrder,

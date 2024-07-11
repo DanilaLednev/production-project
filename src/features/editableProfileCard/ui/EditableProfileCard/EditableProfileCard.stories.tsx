@@ -1,8 +1,8 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import React from 'react';
 
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import { NormalDark } from 'shared/ui/Skeleton/Skeleton.stories';
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { NormalDark } from '@/shared/ui/Skeleton/Skeleton.stories';
 import { EditableProfileCard } from './EditableProfileCard';
 
 export default {
