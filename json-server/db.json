@@ -612,22 +612,28 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": ["ADMIN"],
+      "roles": [
+        "ADMIN"
+      ],
       "avatar": "https://cdn.metatime.com/landing/blog/1686575019blobid0.jpg"
     },
     {
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": ["USER"],
+      "roles": [
+        "USER"
+      ],
       "avatar": "https://thumbs.dreamstime.com/b/hacker-illustration-working-computer-laptop-engulfed-binary-code-85636052.jpg"
     },
     {
-    "id": "3",
-    "username": "manager",
-    "password": "123",
-    "roles": ["MANAGER"],
-    "avatar": "https://profchoice.ru/wp-content/uploads/2017/10/iStock_000013749421Medium-1024x682-e1508770941336.jpg"
+      "id": "3",
+      "username": "manager",
+      "password": "123",
+      "roles": [
+        "MANAGER"
+      ],
+      "avatar": "https://profchoice.ru/wp-content/uploads/2017/10/iStock_000013749421Medium-1024x682-e1508770941336.jpg"
     }
   ],
   "profile": [
@@ -652,6 +658,36 @@
       "city": "Moscow",
       "username": "use two",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    }
+  ],
+  "article-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "1"
+    },
+    {
+      "id": "2",
+      "rate": 4,
+      "feedback": "Хорошая статья",
+      "userId": "1",
+      "articleId": "2"
+    },
+    {
+      "userId": "1",
+      "articleId": "5",
+      "rate": 5,
+      "feedback": "",
+      "id": "Uqi8PQh"
+    },
+    {
+      "userId": "1",
+      "articleId": "12",
+      "rate": 4,
+      "feedback": "Not bad fo start",
+      "id": "O_HTW6b"
     }
   ]
 }
