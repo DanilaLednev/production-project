@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ProfileRating } from './ProfileRating';
 
 export default {
-  title: 'shared/ProfileRating',
+  title: 'feature/ProfileRating',
   component: ProfileRating,
   argTypes: {
     backgroundColor: { control: 'color' },

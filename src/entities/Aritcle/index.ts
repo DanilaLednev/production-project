@@ -28,3 +28,4 @@ export {
 export { ArticleSortFiled } from './model/consts/articleConsts';
 export { ArticleView } from './model/consts/articleConsts';
 export { ArticleType } from './model/consts/articleConsts';
+export { ArticleBlockType } from './model/consts/articleConsts';

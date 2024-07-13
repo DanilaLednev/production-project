@@ -18,7 +18,7 @@ interface PageProps {
   onScrollEnd?: () => void;
 }
 
-// export const PAGE_ID = 'PAGE_ID';
+export const PAGE_ID = 'PAGE_ID';
 
 export const Page = (props: PageProps) => {
   const { className, children, onScrollEnd } = props;
