@@ -5,8 +5,8 @@ import { Page } from '@/widgets/Page';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { ProfileRating } from '@/features/profileRating';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/Stack/VStack/VStack';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
+import { VStack } from '@/shared/ui/Stack';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
 
 interface ProfilePageProps {
   className?: string;

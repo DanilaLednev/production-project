@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import starIcon from '@/shared/assets/icons/star.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Icon } from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon';
 import cls from './StarRating.module.scss';
 
 interface StarRatingProps {

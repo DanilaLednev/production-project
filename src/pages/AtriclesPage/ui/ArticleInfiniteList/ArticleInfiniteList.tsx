@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
 import { ArticleList } from '@/entities/Aritcle';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text/Text';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
 import {
   getArticlesPageError,
   getArticlesPageIsLoading,
