@@ -30,10 +30,29 @@ module.exports = {
     '@typescript-eslint',
     'i18next',
     'react-hooks',
+    'unused-imports',
   ],
   rules: {
+    "import/order": [
+      "error",
+      {
+        "pathGroups": [
+          {
+            pattern: './**.module.*',
+            group: 'internal',
+            position: 'after',
+          }
+        ],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": false
+        }
+      }
+    ],
     'react/jsx-indent': [2, 2],
     'react/jsx-indent-props': [2, 2],
+    "unused-imports/no-unused-imports": "error",
     indent: [2, 2],
     'react/jsx-filename-extension': [
       2,

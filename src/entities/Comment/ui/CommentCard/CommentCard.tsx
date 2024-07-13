@@ -1,4 +1,5 @@
 import { useTranslation } from 'react-i18next';
+
 import { Comment } from '@/entities/Comment';
 import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -7,6 +8,7 @@ import { Avatar } from '@/shared/ui/Avatar';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
 import { Text } from '@/shared/ui/Text';
+
 import cls from './CommentCard.module.scss';
 
 interface CommentCardProps {

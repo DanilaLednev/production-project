@@ -1,14 +1,6 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import EyeIcon from '@/shared/assets/icons/eye.svg';
-import { RoutePath } from '@/shared/const/router';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Card } from '@/shared/ui/Card';
-import { Icon } from '@/shared/ui/Icon';
-import { Text } from '@/shared/ui/Text';
+
 import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import {
   Article,
@@ -18,6 +10,17 @@ import {
 import {
   ArticleTextBlockComponents,
 } from '../ArticleTextBlockComponents/ArticleTextBlockComponents';
+
+import EyeIcon from '@/shared/assets/icons/eye.svg';
+import { RoutePath } from '@/shared/const/router';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { AppLink } from '@/shared/ui/AppLink';
+import { Avatar } from '@/shared/ui/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/Button';
+import { Card } from '@/shared/ui/Card';
+import { Icon } from '@/shared/ui/Icon';
+import { Text } from '@/shared/ui/Text';
+
 import cls from './ArticleListItem.module.scss';
 
 interface ArticleListItemProps {

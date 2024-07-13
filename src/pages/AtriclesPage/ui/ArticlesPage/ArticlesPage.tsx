@@ -1,7 +1,13 @@
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSearchParams } from 'react-router-dom';
-import { Page } from '@/widgets/Page';
+
+import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
+import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
+import { articlePageReducer } from '../../model/slices/ArticlePageSlice';
+import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
+import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -9,11 +15,8 @@ import {
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { fetchNextArticlesPage } from '../../model/services/fetchNextArticlesPage/fetchNextArticlesPage';
-import { initArticlePage } from '../../model/services/initArticlePage/initArticlePage';
-import { articlePageReducer } from '../../model/slices/ArticlePageSlice';
-import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
-import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
+import { Page } from '@/widgets/Page';
+
 import cls from './ArticlesPage.module.scss';
 
 interface ArticlesPageProps {

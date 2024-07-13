@@ -1,10 +1,12 @@
 import { createEntityAdapter, createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { StateSchema } from '@/app/providers/StoreProvider';
-import { Comment } from '@/entities/Comment';
+
 import {
   fetchCommentsByArticleId,
 } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { ArticleDetailsCommentsSchema } from '../types/ArticleDetailsCommentsSchema';
+
+import { StateSchema } from '@/app/providers/StoreProvider';
+import { Comment } from '@/entities/Comment';
 
 const commentsAdapter = createEntityAdapter<Comment>({
   // Assume IDs are stored in a field other than `book.id`

@@ -1,11 +1,13 @@
-import { Country } from '@/entities/Country';
-import { Currency } from '@/entities/Currency';
 // import { updateProfileData } from 'entities/Profile';
 // import { ProfileSchema, ValidateProfileError } from '../types/profile';
 import { ValidateProfileError } from '../consts/consts';
 import { updateProfileData } from '../services/updateProfileData/updateProfileData';
 import { ProfileSchema } from '../types/editableProfileCardSchema';
+
 import { profileActions, profileReducer } from './profileSlice';
+
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
 
 const data = {
   first: 'Name',

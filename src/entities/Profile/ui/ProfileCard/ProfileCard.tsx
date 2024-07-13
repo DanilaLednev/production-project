@@ -1,4 +1,7 @@
 import { useTranslation } from 'react-i18next';
+
+import { Profile } from '../../model/types/profile';
+
 import { Country, CountrySelect } from '@/entities/Country';
 import { Currency, CurrencySelect } from '@/entities/Currency';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
@@ -7,7 +10,7 @@ import { Input } from '@/shared/ui/Input';
 import { Loader } from '@/shared/ui/Loader';
 import { HStack, VStack } from '@/shared/ui/Stack';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
-import { Profile } from '../../model/types/profile';
+
 import cls from './ProfileCard.module.scss';
 
 interface ProfileCardProps {

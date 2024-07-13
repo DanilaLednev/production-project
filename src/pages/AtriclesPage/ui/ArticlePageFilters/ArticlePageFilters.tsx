@@ -1,25 +1,8 @@
-import { useCallback, useMemo } from 'react';
+import { useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
 import {
-  fetchArticleList,
-} from '@/pages/AtriclesPage/model/services/fetchArticlesList/fetchArticlesList';
-import {
-  ArticleSortFiled, ArticleType,
-  ArticleTypeTabs,
-  ArticleView,
-  ArticleViewSelector,
-} from '@/entities/Aritcle';
-import { ArticleSortSelector } from '@/entities/Aritcle/ui/ArticleSortSelector/ArticleSortSelector';
-import { classNames } from '@/shared/lib/classNames/classNames';
-import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
-import { SortOrder } from '@/shared/types';
-import { Card } from '@/shared/ui/Card';
-import { Input } from '@/shared/ui/Input';
-import { Tabs, TabsItem } from '@/shared/ui/Tabs';
-import {
-  getArticlesPageIsLoading,
   getArticlesPageOrder,
   getArticlesPageSearch,
   getArticlesPageSort,
@@ -27,6 +10,24 @@ import {
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
 import { articlePageActions } from '../../model/slices/ArticlePageSlice';
+
+import {
+  ArticleSortFiled, ArticleType,
+  ArticleTypeTabs,
+  ArticleView,
+  ArticleViewSelector,
+} from '@/entities/Aritcle';
+import { ArticleSortSelector } from '@/entities/Aritcle/ui/ArticleSortSelector/ArticleSortSelector';
+import {
+  fetchArticleList,
+} from '@/pages/AtriclesPage/model/services/fetchArticlesList/fetchArticlesList';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
+import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';
+import { SortOrder } from '@/shared/types';
+import { Card } from '@/shared/ui/Card';
+import { Input } from '@/shared/ui/Input';
+
 import cls from './ArticlePageFilters.module.scss';
 
 interface ArticlePageFiltersProps {

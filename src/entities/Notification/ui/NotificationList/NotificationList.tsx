@@ -1,9 +1,12 @@
 import { useTranslation } from 'react-i18next';
+
+import { NotificationItem } from '../NotificationItem/NotificationItem';
+
 import { useNotifications } from '@/entities/Notification/appi/notificationApi';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Skeleton } from '@/shared/ui/Skeleton';
 import { VStack } from '@/shared/ui/Stack';
-import { NotificationItem } from '../NotificationItem/NotificationItem';
+
 import cls from './NotificationList.module.scss';
 
 interface NotificationListProps {

@@ -1,14 +1,15 @@
 import React from 'react';
-import { AboutPage } from '@/pages/aboutPage';
+
+import { UserRole } from '@/entities/User/model/consts/userConsts';
 import { AdminPanelPage } from '@/pages/AdminPanelPage';
 import { ArticleDetailsPage } from '@/pages/ArticleDetailsPage';
 import { ArticleEditPage } from '@/pages/ArticleEditPage';
 import { ArticlesPage } from '@/pages/AtriclesPage';
 import { ForbiddenPage } from '@/pages/ForbiddenPage';
+import { ProfilePage } from '@/pages/ProfilePage';
+import { AboutPage } from '@/pages/aboutPage';
 import { MainPage } from '@/pages/mainPage';
 import { NotFoundPage } from '@/pages/notFoundPage';
-import { ProfilePage } from '@/pages/ProfilePage';
-import { UserRole } from '@/entities/User/model/consts/userConsts';
 import { AppRoutes, RoutePath } from '@/shared/const/router';
 import { AppRouteProps } from '@/shared/types/router';
 

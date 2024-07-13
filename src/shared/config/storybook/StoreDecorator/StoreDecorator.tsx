@@ -1,11 +1,13 @@
 import { Story } from '@storybook/react';
+
+// eslint-disable-next-line import/order
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 
 // import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slice';
-import { addCommentFormReducer } from '@/features/addCommentForm/testing';
-import { loginReducer } from '@/features/AuthByUsername/testing';
-import { profileReducer } from '@/features/editableProfileCard/testing';
 import { articleDetailsReducer } from '@/entities/Aritcle/testing';
+import { loginReducer } from '@/features/AuthByUsername/testing';
+import { addCommentFormReducer } from '@/features/addCommentForm/testing';
+import { profileReducer } from '@/features/editableProfileCard/testing';
 import { ReducerList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 
 const defaultAsyncReducers: ReducerList = {

@@ -1,6 +1,20 @@
 import { memo, useCallback, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
 import { useSelector } from 'react-redux';
+
+import { ArticleBlockType } from '../../model/consts/articleConsts';
+import {
+  getArticleDetailsIsLoading,
+  getArticleDetailsData,
+  getArticleDetailsError,
+} from '../../model/selectors/articleDetails';
+import { fetchArticleById } from '../../model/sevices/fetchArticleById/fetchArticleById';
+import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
+import { ArticleBlock } from '../../model/types/article';
+import { ArticleCodeBlockComponents } from '../ArticleCodeBlockComponents/ArticleCodeBlockComponents';
+import { ArticleImageBlockComponents } from '../ArticleImageBlockComponents/ArticleImageBlockComponents';
+import { ArticleTextBlockComponents } from '../ArticleTextBlockComponents/ArticleTextBlockComponents';
+
 import CalendarIcon from '@/shared/assets/icons/calendar.svg';
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -16,18 +30,7 @@ import { HStack, VStack } from '@/shared/ui/Stack';
 import {
   Text, TextAlign, TextSize, TextTheme,
 } from '@/shared/ui/Text';
-import { ArticleBlockType } from '../../model/consts/articleConsts';
-import {
-  getArticleDetailsIsLoading,
-  getArticleDetailsData,
-  getArticleDetailsError,
-} from '../../model/selectors/articleDetails';
-import { fetchArticleById } from '../../model/sevices/fetchArticleById/fetchArticleById';
-import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice';
-import { ArticleBlock } from '../../model/types/article';
-import { ArticleCodeBlockComponents } from '../ArticleCodeBlockComponents/ArticleCodeBlockComponents';
-import { ArticleImageBlockComponents } from '../ArticleImageBlockComponents/ArticleImageBlockComponents';
-import { ArticleTextBlockComponents } from '../ArticleTextBlockComponents/ArticleTextBlockComponents';
+
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {
