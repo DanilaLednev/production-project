@@ -1,6 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { Comment } from '@/entities/Comment';
-import { RoutePath } from '@/shared/config/routeConfig/routeConfig';
+import { RoutePath } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink/AppLink';
 import { Avatar } from '@/shared/ui/Avatar/Avatar';
