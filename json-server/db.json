@@ -689,5 +689,21 @@
       "feedback": "Not bad fo start",
       "id": "O_HTW6b"
     }
+  ],
+  "profile-ratings": [
+    {
+      "id": "1",
+      "rate": 4,
+      "feedback": "Хорошая профиль",
+      "userId": "1",
+      "profileId": "1"
+    },
+    {
+      "userId": "1",
+      "profileId": "2",
+      "rate": 3,
+      "feedback": "Профиль заполнен не полностью",
+      "id": "-MoZI2T"
+    }
   ]
 }
