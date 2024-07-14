@@ -6,7 +6,7 @@ import { articleDetailsPageReducer } from '../../model/slice';
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments';
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
-import { ArticleDetails } from '@/entities/Aritcle';
+import { ArticleDetails } from '@/entities/Article';
 import { ArticleRating } from '@/features/articleRating';
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList';
 import { classNames } from '@/shared/lib/classNames/classNames';

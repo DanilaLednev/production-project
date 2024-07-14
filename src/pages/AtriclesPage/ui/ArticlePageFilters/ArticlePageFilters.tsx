@@ -9,18 +9,17 @@ import {
   getArticlesPageType,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
+import {
+  fetchArticleList,
+} from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlePageActions } from '../../model/slices/ArticlePageSlice';
 
 import {
-  ArticleSortFiled, ArticleType,
-  ArticleTypeTabs,
-  ArticleView,
-  ArticleViewSelector,
-} from '@/entities/Aritcle';
-import { ArticleSortSelector } from '@/entities/Aritcle/ui/ArticleSortSelector/ArticleSortSelector';
-import {
-  fetchArticleList,
-} from '@/pages/AtriclesPage/model/services/fetchArticlesList/fetchArticlesList';
+  ArticleSortFiled,
+  ArticleSortSelector,
+  ArticleType, ArticleTypeTabs,
+  ArticleView, ArticleViewSelector,
+} from '@/entities/Article';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useDebounce } from '@/shared/lib/hooks/useDebounce/useDebounce';

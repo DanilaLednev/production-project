@@ -5,11 +5,8 @@ import { ArticlePageSchema } from '../types/articlePageSchema';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
 import {
-  Article,
-  ArticleType,
-  ArticleView,
-  ArticleSortFiled,
-} from '@/entities/Aritcle';
+  Article, ArticleSortFiled, ArticleType, ArticleView,
+} from '@/entities/Article';
 import { ARTICLE_VIEW_LOCALSTORAGE_KEY } from '@/shared/const/localstorage';
 import { SortOrder } from '@/shared/types';
 

@@ -4,8 +4,8 @@ import withMock from 'storybook-addon-mock';
 
 import { ArticleRecommendationsList } from './ArticleRecommendationsList';
 
-import { Article } from '@/entities/Aritcle';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
+import { Article } from 'src/entities/Article';
 
 export default {
   title: 'features/ArticleRecommendationsList',

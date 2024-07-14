@@ -4,7 +4,7 @@ import { Story } from '@storybook/react';
 import { StateSchema, StoreProvider } from '@/app/providers/StoreProvider';
 
 // import { articleDetailsPageReducer } from '@/pages/ArticleDetailsPage/model/slice';
-import { articleDetailsReducer } from '@/entities/Aritcle/testing';
+import { articleDetailsReducer } from '@/entities/Article/testing';
 import { loginReducer } from '@/features/AuthByUsername/testing';
 import { addCommentFormReducer } from '@/features/addCommentForm/testing';
 import { profileReducer } from '@/features/editableProfileCard/testing';

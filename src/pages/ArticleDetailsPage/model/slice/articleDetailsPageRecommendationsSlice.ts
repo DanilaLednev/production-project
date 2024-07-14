@@ -6,7 +6,7 @@ import {
 import { ArticleDetailsRecommendationsSchema } from '../types/ArticleDetailsRecommendationsSchema';
 
 import { StateSchema } from '@/app/providers/StoreProvider';
-import { Article } from '@/entities/Aritcle';
+import { Article } from 'src/entities/Article';
 
 const recommendationsAdapter = createEntityAdapter<Article>({
   // Assume IDs are stored in a field other than `book.id`

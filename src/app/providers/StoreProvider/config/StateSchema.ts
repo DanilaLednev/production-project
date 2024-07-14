@@ -4,7 +4,6 @@ import {
 import { AxiosInstance } from 'axios';
 import { CombinedState } from 'redux';
 
-import { ArticleDetailsSchema } from '@/entities/Aritcle';
 import { CounterSchema } from '@/entities/Counter';
 import { UserSchema } from '@/entities/User';
 import { LoginSchema } from '@/features/AuthByUsername';
@@ -14,6 +13,7 @@ import { ProfileSchema } from '@/features/editableProfileCard';
 import { ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage';
 import { ArticlePageSchema } from '@/pages/AtriclesPage';
 import { rtkApi } from '@/shared/api/rtkApi';
+import { ArticleDetailsSchema } from 'src/entities/Article';
 
 export interface StateSchema {
   counter: CounterSchema,
