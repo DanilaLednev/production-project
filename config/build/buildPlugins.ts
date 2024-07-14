@@ -61,7 +61,7 @@ export function buildPlugin({
       patterns: [
         { from: paths.locales, to: paths.buildLocales },
       ],
-    }),)
+    }));
   }
 
   return plugins;
