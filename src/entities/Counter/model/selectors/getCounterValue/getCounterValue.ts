@@ -1,10 +1,13 @@
-import { buildSelector } from '@/shared/lib/store';
+import { createSelector } from '@reduxjs/toolkit';
 
-// export const getCounterValue = createSelector(
-//   getCounter,
-//   (counter: CounterSchema) => counter.value,
-// );
+import { CounterSchema } from '@/entities/Counter';
+import { getCounter } from '@/entities/Counter/model/selectors/getCounter/getCounter';
 
-export const [useCounterValue, getCounterValue] = buildSelector(
-  (state) => state.counter.value,
+export const getCounterValue = createSelector(
+  getCounter,
+  (counter: CounterSchema) => counter.value,
 );
+
+// export const [useCounterValue, getCounterValue] = buildSelector(
+//   (state) => state.counter.value,
+// );
