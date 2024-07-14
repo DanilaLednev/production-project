@@ -30,7 +30,7 @@ export function buildWebpackConfig(options: {
       rules: buildLoaders(options),
     },
     resolve: biuldResolvers(options),
-    devtool: isDev ? 'inline-source-map' : undefined,
+    devtool: isDev ? 'eval-cheap-module-source-map' : undefined,
     devServer: isDev ? buildDevServer(options) : undefined,
   };
 }
