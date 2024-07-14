@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 
 import { Comment } from '@/entities/Comment';
-import { RoutePath } from '@/shared/const/router';
+import { getRouteProfile } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { AppLink } from '@/shared/ui/AppLink';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -39,7 +39,7 @@ export const CommentCard = (props: CommentCardProps) => {
 
   return (
     <VStack gap="8" max className={classNames(cls.CommentCard, {}, [className])}>
-      <AppLink to={`${RoutePath.profile}${comment.user.id}`} className={cls.header}>
+      <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
         {comment.user.avatar ? <Avatar src={comment.user.avatar} size={30} /> : null}
         <Text className={cls.username} title={comment.user.username} />
       </AppLink>
