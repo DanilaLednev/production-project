@@ -634,6 +634,15 @@
         "MANAGER"
       ],
       "avatar": "https://profchoice.ru/wp-content/uploads/2017/10/iStock_000013749421Medium-1024x682-e1508770941336.jpg"
+    },
+    {
+      "id": "4",
+      "username": "testuser",
+      "password": "123",
+      "roles": [
+        "ADMIN"
+      ],
+      "avatar": "https://lh4.googleusercontent.com/rk2BRLYx580R-rZQGPUDSCgax2mag9x3pPMBuccLM7-O3uPy5ZSlheviUtDgMKY9yiYfZCYbuBw7lfkDnktsYavYcM3AaJAxTSXKwf7NOcsH-lKrSaPrAPuFNectrV-nOjrhbZbBk3yOAt7MiQ"
     }
   ],
   "profile": [
