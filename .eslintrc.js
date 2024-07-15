@@ -100,6 +100,7 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'boundaries/element-types': 'warn',
     'import/no-internal-modules': 'warn',
+    'react/destructuring-assignment': 'warn'
   },
   globals: {
     __IS_DEV__: true,

@@ -5,7 +5,7 @@ import { articlePageActions } from '../../slices/ArticlePageSlice';
 import { fetchArticleList } from '../fetchArticlesList/fetchArticlesList';
 
 import { ThunkConfig } from '@/app/providers/StoreProvider';
-import { SortOrder } from '@/shared/types';
+import { SortOrder } from '@/shared/types/sort';
 import { ArticleSortFiled, ArticleType } from 'src/entities/Article';
 
 export const initArticlePage = createAsyncThunk<
