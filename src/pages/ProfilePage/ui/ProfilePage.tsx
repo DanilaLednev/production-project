@@ -19,7 +19,13 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
   const { t } = useTranslation('profile');
 
   if (!id) {
-    return <Text align={TextAlign.CENTER} theme={TextTheme.ERROR} title={t('Профиль не найден')} />;
+    return (
+      <Text
+        align={TextAlign.CENTER}
+        theme={TextTheme.ERROR}
+        title={t('Профиль не найден')}
+      />
+    );
   }
 
   return (

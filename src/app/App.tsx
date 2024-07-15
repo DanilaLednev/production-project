@@ -30,7 +30,7 @@ export const App = () => {
 
         <div className="content-page">
           <Sidebar />
-          { inited && <AppRouter /> }
+          {inited && <AppRouter />}
         </div>
       </Suspense>
     </div>

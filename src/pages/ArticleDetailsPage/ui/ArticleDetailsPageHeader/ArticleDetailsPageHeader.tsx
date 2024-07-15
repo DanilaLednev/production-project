@@ -16,7 +16,9 @@ interface ArticleDetailsPageHeaderProps {
   className?: string;
 }
 
-export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) => {
+export const ArticleDetailsPageHeader = (
+  props: ArticleDetailsPageHeaderProps,
+) => {
   const { className } = props;
   const { t } = useTranslation('article');
   const navigate = useNavigate();
@@ -36,17 +38,11 @@ export const ArticleDetailsPageHeader = (props: ArticleDetailsPageHeaderProps) =
 
   return (
     <HStack max justify="between" className={classNames('', {}, [className])}>
-      <Button
-        theme={ButtonTheme.OUTLINE}
-        onClick={onBackToList}
-      >
+      <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
         {t('Назад к списку')}
       </Button>
       {canEdit && (
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          onClick={onEditArticle}
-        >
+        <Button theme={ButtonTheme.OUTLINE} onClick={onEditArticle}>
           {t('Редактировать')}
         </Button>
       )}

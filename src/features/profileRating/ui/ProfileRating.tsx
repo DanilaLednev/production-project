@@ -11,7 +11,6 @@ import { Skeleton } from '@/shared/ui/Skeleton';
 interface ProfileRatingProps {
   className?: string;
   profileId: string;
-
 }
 
 export const ProfileRating = (props: ProfileRatingProps) => {
@@ -28,26 +27,35 @@ export const ProfileRating = (props: ProfileRatingProps) => {
 
   const rating = data?.[0];
 
-  const handleRateProfile = useCallback((starsCount: number, feedback?: string) => {
-    try {
-      rateProfileMutation({
-        userId: userData?.id ?? '',
-        profileId,
-        rate: starsCount,
-        feedback,
-      });
-    } catch (e) {
-      console.log(e);
-    }
-  }, [profileId, rateProfileMutation, userData?.id]);
+  const handleRateProfile = useCallback(
+    (starsCount: number, feedback?: string) => {
+      try {
+        rateProfileMutation({
+          userId: userData?.id ?? '',
+          profileId,
+          rate: starsCount,
+          feedback,
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    },
+    [profileId, rateProfileMutation, userData?.id],
+  );
 
-  const onAccept = useCallback((starsCount: number, feedback?: string) => {
-    handleRateProfile(starsCount, feedback);
-  }, [handleRateProfile]);
+  const onAccept = useCallback(
+    (starsCount: number, feedback?: string) => {
+      handleRateProfile(starsCount, feedback);
+    },
+    [handleRateProfile],
+  );
 
-  const onCancel = useCallback((starsCount: number, feedback?: string) => {
-    handleRateProfile(starsCount);
-  }, [handleRateProfile]);
+  const onCancel = useCallback(
+    (starsCount: number, feedback?: string) => {
+      handleRateProfile(starsCount);
+    },
+    [handleRateProfile],
+  );
 
   if (isLoading) {
     return <Skeleton width="100%" height={120} />;
@@ -63,6 +71,5 @@ export const ProfileRating = (props: ProfileRatingProps) => {
       onCancel={onCancel}
       onAccept={onAccept}
     />
-
   );
 };

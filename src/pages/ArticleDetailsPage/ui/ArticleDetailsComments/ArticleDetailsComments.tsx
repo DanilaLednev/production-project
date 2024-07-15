@@ -29,9 +29,12 @@ export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
   const comments = useSelector(getArticleComments.selectAll);
   const commentsIsLoading = useSelector(getArticleCommentsIsLoading);
 
-  const onSendComment = useCallback((text: string) => {
-    dispatch(addCommentForArticle(text));
-  }, [dispatch]);
+  const onSendComment = useCallback(
+    (text: string) => {
+      dispatch(addCommentForArticle(text));
+    },
+    [dispatch],
+  );
 
   useInitialEffect(() => {
     dispatch(fetchCommentsByArticleId(id));
@@ -40,17 +43,11 @@ export const ArticleDetailsComments = (props: ArticleDetailsCommentsProps) => {
 
   return (
     <VStack gap="16" max className={classNames('', {}, [className])}>
-      <Text
-        size={TextSize.L}
-        title={t('Комментарии')}
-      />
+      <Text size={TextSize.L} title={t('Комментарии')} />
       <Suspense fallback={<Loader />}>
         <AddCommentForm onSendComment={onSendComment} />
       </Suspense>
-      <CommentList
-        isLoading={commentsIsLoading}
-        comments={comments}
-      />
+      <CommentList isLoading={commentsIsLoading} comments={comments} />
     </VStack>
   );
 };

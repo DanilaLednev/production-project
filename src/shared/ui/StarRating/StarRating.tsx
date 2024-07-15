@@ -17,12 +17,7 @@ interface StarRatingProps {
 const stars = [1, 2, 3, 4, 5];
 
 export const StarRating = (props: StarRatingProps) => {
-  const {
-    className,
-    size = 30,
-    selectedStars = 0,
-    onSelect,
-  } = props;
+  const { className, size = 30, selectedStars = 0, onSelect } = props;
   const { t } = useTranslation();
 
   const [isHovered, setHovered] = useState(false);
@@ -54,11 +49,9 @@ export const StarRating = (props: StarRatingProps) => {
       {stars.map((starNumber, index) => (
         <Icon
           key={index}
-          className={classNames(
-            cls.StarIcon,
-            { [cls.selected]: isSelected },
-            [currentStarsCount >= starNumber ? cls.hovered : cls.normal],
-          )}
+          className={classNames(cls.StarIcon, { [cls.selected]: isSelected }, [
+            currentStarsCount >= starNumber ? cls.hovered : cls.normal,
+          ])}
           Svg={starIcon}
           width={size}
           height={size}

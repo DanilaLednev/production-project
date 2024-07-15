@@ -8,15 +8,16 @@ module.exports = {
     'plugin:react/recommended',
     'airbnb',
     'plugin:i18next/recommended',
-    "@feature-sliced",
+    '@feature-sliced',
+    'prettier',
   ],
   parser: '@typescript-eslint/parser',
-  "settings": {
-    "import/resolver": {
-      "typescript": {
-        "alwaysTryTypes": true
-      }
-    }
+  settings: {
+    'import/resolver': {
+      typescript: {
+        alwaysTryTypes: true,
+      },
+    },
   },
   parserOptions: {
     ecmaFeatures: {
@@ -33,27 +34,27 @@ module.exports = {
     'unused-imports',
   ],
   rules: {
-    "import/order": [
-      "error",
+    'import/order': [
+      'error',
       {
-        "pathGroups": [
+        pathGroups: [
           {
             pattern: './**.module.*',
             group: 'internal',
             position: 'after',
-          }
+          },
         ],
-        "newlines-between": "always",
-        "alphabetize": {
-          "order": "asc",
-          "caseInsensitive": false
-        }
-      }
+        'newlines-between': 'always',
+        alphabetize: {
+          order: 'asc',
+          caseInsensitive: false,
+        },
+      },
     ],
-    'react/jsx-indent': [2, 2],
-    'react/jsx-indent-props': [2, 2],
-    "unused-imports/no-unused-imports": "error",
-    indent: [2, 2],
+    // 'react/jsx-indent': [2, 2],
+    // 'react/jsx-indent-props': [2, 2],
+    // "unused-imports/no-unused-imports": "error",
+    // indent: [2, 2],
     'react/jsx-filename-extension': [
       2,
       { extensions: ['.js', '.jsx', '.tsx'] },
@@ -84,7 +85,7 @@ module.exports = {
           'direction',
           'gap',
           'border',
-          'refName'
+          'refName',
         ],
       },
     ],
@@ -100,7 +101,8 @@ module.exports = {
     'react/no-array-index-key': 'off',
     'boundaries/element-types': 'warn',
     'import/no-internal-modules': 'warn',
-    'react/destructuring-assignment': 'warn'
+    'react/destructuring-assignment': 'warn',
+    'react/jsx-max-props-per-line': ['error', { maximum: 4 }],
   },
   globals: {
     __IS_DEV__: true,

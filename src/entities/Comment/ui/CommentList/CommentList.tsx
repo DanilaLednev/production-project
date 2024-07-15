@@ -9,7 +9,7 @@ import { Text } from '@/shared/ui/Text';
 
 interface CommentListProps {
   className?: string;
-  comments?: Comment [];
+  comments?: Comment[];
   isLoading?: boolean;
 }
 
@@ -29,15 +29,17 @@ export const CommentList = (props: CommentListProps) => {
 
   return (
     <VStack gap="16" max className={classNames('', {}, [className])}>
-      {comments?.length
-        ? comments.map((comment) => (
+      {comments?.length ? (
+        comments.map((comment) => (
           <CommentCard
             key={comment.id}
             comment={comment}
             isLoading={isLoading}
           />
         ))
-        : <Text text={t('Комментарии отсутствуют')} />}
+      ) : (
+        <Text text={t('Комментарии отсутствуют')} />
+      )}
     </VStack>
   );
 };

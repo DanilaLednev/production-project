@@ -1,5 +1,8 @@
 import {
-  AnyAction, EnhancedStore, Reducer, ReducersMapObject,
+  AnyAction,
+  EnhancedStore,
+  Reducer,
+  ReducersMapObject,
 } from '@reduxjs/toolkit';
 import { AxiosInstance } from 'axios';
 import { CombinedState } from 'redux';
@@ -16,18 +19,18 @@ import { rtkApi } from '@/shared/api/rtkApi';
 import { ArticleDetailsSchema } from 'src/entities/Article';
 
 export interface StateSchema {
-  counter: CounterSchema,
-  user: UserSchema,
-  ui: UISchema,
-  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>,
+  counter: CounterSchema;
+  user: UserSchema;
+  ui: UISchema;
+  [rtkApi.reducerPath]: ReturnType<typeof rtkApi.reducer>;
 
   // Асинхронные редюсеры
-  loginForm?: LoginSchema,
-  profile?: ProfileSchema,
-  articleDetails?: ArticleDetailsSchema,
-  addCommentForm?: AddCommentFormSchema,
-  articlesPage?: ArticlePageSchema,
-  articleDetailsPage?: ArticleDetailsPageSchema
+  loginForm?: LoginSchema;
+  profile?: ProfileSchema;
+  articleDetails?: ArticleDetailsSchema;
+  addCommentForm?: AddCommentFormSchema;
+  articlesPage?: ArticlePageSchema;
+  articleDetailsPage?: ArticleDetailsPageSchema;
 }
 
 export type StateSchemaKey = keyof StateSchema;
@@ -42,7 +45,7 @@ export interface ReducerManager {
   remove: (key: StateSchemaKey) => void;
 
   // true - вмонтирован, false - демонтирован
-  getMountedReducer:() => MountedReducers;
+  getMountedReducer: () => MountedReducers;
 }
 
 export interface ReduxStoreWithManager extends EnhancedStore<StateSchema> {

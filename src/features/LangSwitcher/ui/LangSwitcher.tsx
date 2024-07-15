@@ -5,8 +5,8 @@ import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 
 interface LangSwitcherProps {
-  className?: string,
-  short?: boolean,
+  className?: string;
+  short?: boolean;
 }
 
 export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
@@ -22,7 +22,7 @@ export const LangSwitcher = memo(({ className, short }: LangSwitcherProps) => {
       theme={ButtonTheme.CLEAR_INVERTED}
       onClick={toggle}
     >
-      { t(short ? 'Короткий язык' : 'Язык') }
+      {t(short ? 'Короткий язык' : 'Язык')}
     </Button>
   );
 });

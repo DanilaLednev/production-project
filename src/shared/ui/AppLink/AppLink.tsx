@@ -17,23 +17,25 @@ interface AppLinkProps extends LinkProps {
   children?: ReactNode;
 }
 
-export const AppLink = forwardRef((props: AppLinkProps, ref:ForwardedRef<HTMLAnchorElement>) => {
-  const {
-    to,
-    className,
-    children,
-    theme = AppLinkTheme.PRIMARY,
-    ...otherProps
-  } = props;
+export const AppLink = forwardRef(
+  (props: AppLinkProps, ref: ForwardedRef<HTMLAnchorElement>) => {
+    const {
+      to,
+      className,
+      children,
+      theme = AppLinkTheme.PRIMARY,
+      ...otherProps
+    } = props;
 
-  return (
-    <Link
-      ref={ref}
-      to={to}
-      className={classNames(cls.AppLink, {}, [className, cls[theme]])}
-      {...otherProps}
-    >
-      { children }
-    </Link>
-  );
-});
+    return (
+      <Link
+        ref={ref}
+        to={to}
+        className={classNames(cls.AppLink, {}, [className, cls[theme]])}
+        {...otherProps}
+      >
+        {children}
+      </Link>
+    );
+  },
+);

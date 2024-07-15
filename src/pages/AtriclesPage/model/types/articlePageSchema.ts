@@ -8,7 +8,7 @@ import {
   ArticleType,
 } from 'src/entities/Article';
 
-export interface ArticlePageSchema extends EntityState<Article>{
+export interface ArticlePageSchema extends EntityState<Article> {
   isLoading?: boolean;
   error?: string;
 

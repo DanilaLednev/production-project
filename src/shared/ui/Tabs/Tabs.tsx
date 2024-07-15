@@ -8,7 +8,7 @@ import cls from './Tabs.module.scss';
 
 export interface TabsItem {
   value: string;
-  content: ReactNode
+  content: ReactNode;
 }
 
 interface TabsProps {
@@ -19,17 +19,15 @@ interface TabsProps {
 }
 
 export const Tabs = memo((props: TabsProps) => {
-  const {
-    className,
-    tabs,
-    value,
-    onTabClick,
-  } = props;
+  const { className, tabs, value, onTabClick } = props;
   const { t } = useTranslation();
 
-  const clickHandler = useCallback((tab: TabsItem) => () => {
-    onTabClick(tab);
-  }, [onTabClick]);
+  const clickHandler = useCallback(
+    (tab: TabsItem) => () => {
+      onTabClick(tab);
+    },
+    [onTabClick],
+  );
 
   return (
     <div className={classNames(cls.Tabs, {}, [className])}>

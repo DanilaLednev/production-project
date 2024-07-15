@@ -9,16 +9,10 @@ import {
   getArticlesPageType,
   getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors';
-import {
-  fetchArticleList,
-} from '../../model/services/fetchArticlesList/fetchArticlesList';
+import { fetchArticleList } from '../../model/services/fetchArticlesList/fetchArticlesList';
 import { articlePageActions } from '../../model/slices/ArticlePageSlice';
 
-import {
-  ArticleSortFiled,
-  ArticleType,
-  ArticleView,
-} from '@/entities/Article';
+import { ArticleSortFiled, ArticleType, ArticleView } from '@/entities/Article';
 import { ArticleSortSelector } from '@/features/ArticleSortSelector';
 import { ArticleTypeTabs } from '@/features/ArticleTypeTabs';
 import { ArticleViewSelector } from '@/features/ArticleViewSelector';
@@ -51,33 +45,48 @@ export const ArticlePageFilters = (props: ArticlePageFiltersProps) => {
 
   const debouncedFetchData = useDebounce(fetchData, 500);
 
-  const onChangeView = useCallback((view: ArticleView) => {
-    dispatch(articlePageActions.setView(view));
-  }, [dispatch]);
+  const onChangeView = useCallback(
+    (view: ArticleView) => {
+      dispatch(articlePageActions.setView(view));
+    },
+    [dispatch],
+  );
 
-  const onChangeSort = useCallback((newSort: ArticleSortFiled) => {
-    dispatch(articlePageActions.setSort(newSort));
-    dispatch(articlePageActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
+  const onChangeSort = useCallback(
+    (newSort: ArticleSortFiled) => {
+      dispatch(articlePageActions.setSort(newSort));
+      dispatch(articlePageActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData],
+  );
 
-  const onChangeOrder = useCallback((newOrder: SortOrder) => {
-    dispatch(articlePageActions.setOrder(newOrder));
-    dispatch(articlePageActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
+  const onChangeOrder = useCallback(
+    (newOrder: SortOrder) => {
+      dispatch(articlePageActions.setOrder(newOrder));
+      dispatch(articlePageActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData],
+  );
 
-  const onChangeSearch = useCallback((search: string) => {
-    dispatch(articlePageActions.setSearch(search));
-    dispatch(articlePageActions.setPage(1));
-    debouncedFetchData();
-  }, [debouncedFetchData, dispatch]);
+  const onChangeSearch = useCallback(
+    (search: string) => {
+      dispatch(articlePageActions.setSearch(search));
+      dispatch(articlePageActions.setPage(1));
+      debouncedFetchData();
+    },
+    [debouncedFetchData, dispatch],
+  );
 
-  const onChangeType = useCallback((value: ArticleType) => {
-    dispatch(articlePageActions.setType(value));
-    dispatch(articlePageActions.setPage(1));
-    fetchData();
-  }, [dispatch, fetchData]);
+  const onChangeType = useCallback(
+    (value: ArticleType) => {
+      dispatch(articlePageActions.setType(value));
+      dispatch(articlePageActions.setPage(1));
+      fetchData();
+    },
+    [dispatch, fetchData],
+  );
 
   return (
     <div className={classNames(cls.ArticlePageFilters, {}, [className])}>
@@ -88,10 +97,7 @@ export const ArticlePageFilters = (props: ArticlePageFiltersProps) => {
           onChangeOrder={onChangeOrder}
           onChangeSort={onChangeSort}
         />
-        <ArticleViewSelector
-          view={view}
-          onViewClick={onChangeView}
-        />
+        <ArticleViewSelector view={view} onViewClick={onChangeView} />
       </div>
       <Card className={cls.search}>
         <Input

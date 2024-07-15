@@ -29,11 +29,7 @@ export const NotificationItem = (props: NotificationItemProps) => {
 
   if (item.href) {
     return (
-      <AppLink
-        className={cls.link}
-        target="_blank"
-        to={item.href}
-      >
+      <AppLink className={cls.link} target="_blank" to={item.href}>
         {content}
       </AppLink>
     );

@@ -3,7 +3,10 @@ import { useTranslation } from 'react-i18next';
 import { useDispatch, useSelector } from 'react-redux';
 
 import {
-  getUserAuthData, isUserAdmin, isUserManager, userActions,
+  getUserAuthData,
+  isUserAdmin,
+  isUserManager,
+  userActions,
 } from '@/entities/User';
 import { getRouteAdmin, getRouteProfile } from '@/shared/const/router';
 import { Avatar } from '@/shared/ui/Avatar';
@@ -29,14 +32,17 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
   if (!authData) return null;
 
   return (
-
     <Dropdown
       direction="bottom left"
       items={[
-        ...(isAdminPanelAvailable ? [{
-          content: t('Админ'),
-          href: getRouteAdmin(),
-        }] : []),
+        ...(isAdminPanelAvailable
+          ? [
+              {
+                content: t('Админ'),
+                href: getRouteAdmin(),
+              },
+            ]
+          : []),
         {
           content: t('Профиль'),
           href: getRouteProfile(authData.id),
@@ -48,6 +54,5 @@ export const AvatarDropdown = (props: AvatarDropdownProps) => {
       ]}
       trigger={<Avatar fallbackInverted size={30} src={authData.avatar} />}
     />
-
   );
 };

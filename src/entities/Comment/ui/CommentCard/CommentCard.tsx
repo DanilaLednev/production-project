@@ -50,7 +50,9 @@ export const CommentCard = (props: CommentCardProps) => {
       className={classNames(cls.CommentCard, {}, [className])}
     >
       <AppLink to={getRouteProfile(comment.user.id)} className={cls.header}>
-        {comment.user.avatar ? <Avatar src={comment.user.avatar} size={30} /> : null}
+        {comment.user.avatar ? (
+          <Avatar src={comment.user.avatar} size={30} />
+        ) : null}
         <Text className={cls.username} title={comment.user.username} />
       </AppLink>
       <Text text={comment.text} className={cls.text} />

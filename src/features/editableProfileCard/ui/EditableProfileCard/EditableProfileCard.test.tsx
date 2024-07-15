@@ -41,13 +41,19 @@ const options = {
 describe('features/EditableProfileCard', () => {
   test('readonly mode should switch', async () => {
     componentRender(<EditableProfileCard id="1" />, options);
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeaderButton.EditButton'));
-    expect(screen.getByTestId('EditableProfileCardHeaderButton.CancelButton')).toBeInTheDocument();
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeaderButton.EditButton'),
+    );
+    expect(
+      screen.getByTestId('EditableProfileCardHeaderButton.CancelButton'),
+    ).toBeInTheDocument();
   });
 
   test('when canceling the values should be reset', async () => {
     componentRender(<EditableProfileCard id="1" />, options);
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeaderButton.EditButton'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeaderButton.EditButton'),
+    );
 
     await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
     await userEvent.clear(screen.getByTestId('ProfileCard.lastname'));
@@ -58,7 +64,9 @@ describe('features/EditableProfileCard', () => {
     expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('user');
     expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue('user');
 
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeaderButton.CancelButton'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeaderButton.CancelButton'),
+    );
 
     expect(screen.getByTestId('ProfileCard.firstname')).toHaveValue('Danila');
     expect(screen.getByTestId('ProfileCard.lastname')).toHaveValue('Lednev');
@@ -66,23 +74,33 @@ describe('features/EditableProfileCard', () => {
 
   test('Error', async () => {
     componentRender(<EditableProfileCard id="1" />, options);
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeaderButton.EditButton'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeaderButton.EditButton'),
+    );
 
     await userEvent.clear(screen.getByTestId('ProfileCard.firstname'));
 
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeaderButton.SaveButton'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeaderButton.SaveButton'),
+    );
 
-    expect(screen.getByTestId('EditableProfileCard.Error.Paragraph')).toBeInTheDocument();
+    expect(
+      screen.getByTestId('EditableProfileCard.Error.Paragraph'),
+    ).toBeInTheDocument();
   });
 
   test('If there are no validation errors, then the request PUT should go to the server', async () => {
     const mockPutReq = jest.spyOn($api, 'put');
     componentRender(<EditableProfileCard id="1" />, options);
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeaderButton.EditButton'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeaderButton.EditButton'),
+    );
 
     await userEvent.type(screen.getByTestId('ProfileCard.firstname'), 'user');
 
-    await userEvent.click(screen.getByTestId('EditableProfileCardHeaderButton.SaveButton'));
+    await userEvent.click(
+      screen.getByTestId('EditableProfileCardHeaderButton.SaveButton'),
+    );
 
     expect(mockPutReq).toHaveBeenCalled();
   });

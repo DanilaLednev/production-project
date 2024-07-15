@@ -21,14 +21,7 @@ interface SelectProps<T extends string> {
 export const typedMemo: <T>(c: T) => T = memo;
 
 export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
-  const {
-    className,
-    label,
-    options,
-    value,
-    readOnly,
-    onChange,
-  } = props;
+  const { className, label, options, value, readOnly, onChange } = props;
 
   const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>) => {
     if (onChange) {
@@ -36,26 +29,20 @@ export const Select = typedMemo(<T extends string>(props: SelectProps<T>) => {
     }
   };
 
-  const mods: Mods = {
-
-  };
-  const optionsList = useMemo(() => options?.map((opt) => (
-    <option
-      key={opt.value}
-      className={cls.option}
-      value={opt.value}
-    >
-      {opt.content}
-    </option>
-  )), [options]);
+  const mods: Mods = {};
+  const optionsList = useMemo(
+    () =>
+      options?.map((opt) => (
+        <option key={opt.value} className={cls.option} value={opt.value}>
+          {opt.content}
+        </option>
+      )),
+    [options],
+  );
 
   return (
     <div className={classNames(cls.Wrapper, mods, [className])}>
-      {label && (
-        <span className={cls.label}>
-          {`${label}>`}
-        </span>
-      )}
+      {label && <span className={cls.label}>{`${label}>`}</span>}
       <select
         disabled={readOnly}
         className={cls.select}

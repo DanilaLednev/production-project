@@ -27,12 +27,9 @@ export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
       theme={AppLinkTheme.SECONDARY}
       to={item.path}
       className={classNames(cls.item, { [cls.collapsed]: collapsed })}
-
     >
       <item.Icon className={cls.icon} />
-      <span className={cls.link}>
-        { t(item.text) }
-      </span>
+      <span className={cls.link}>{t(item.text)}</span>
     </AppLink>
   );
 };

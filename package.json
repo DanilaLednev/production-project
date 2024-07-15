@@ -11,6 +11,7 @@
     "start:dev:server": "node ./json-server/index.js",
     "build:prod": "webpack  --env mode=production apiUrl=https://production-project-server-0rrs.onrender.com",
     "build:dev": "webpack  --env mode=development",
+    "prettier": "npx prettier --write **/*.{ts,tsx,json}",
     "lint:ts": "eslint --quiet \"**/*.{ts,tsx}\"",
     "lint:ts:fix": "eslint \"**/*.{ts,tsx}\" --fix",
     "lint:scss": "npx stylelint \"**/*.scss\"",
@@ -29,7 +30,10 @@
     "generate:slice": "node ./scripts/createSlice/index.js"
   },
   "lint-staged": {
-    "**/*.{ts,tsx}": "eslint"
+    "**/*.{ts,tsx}": [
+      "prettier --list-different",
+      "eslint"
+    ]
   },
   "keywords": [],
   "author": "",
@@ -75,6 +79,7 @@
     "cypress": "^11.0.0",
     "eslint": "^8.10.0",
     "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^8.5.0",
     "eslint-import-resolver-typescript": "^3.6.1",
     "eslint-plugin-boundaries": "^4.2.1",
     "eslint-plugin-i18next": "^5.1.2",
@@ -96,6 +101,7 @@
     "lint-staged": "^13.0.3",
     "loki": "^0.28.1",
     "mini-css-extract-plugin": "^2.5.3",
+    "prettier": "^2.7.1",
     "reg-cli": "^0.17.7",
     "regenerator-runtime": "^0.13.9",
     "sass": "^1.49.9",

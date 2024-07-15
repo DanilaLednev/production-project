@@ -36,9 +36,12 @@ const AddCommentForm = (props: AddCommentFormProps) => {
   // const error = useSelector(getAddCommentFormError);
   const dispatch = useAppDispatch();
 
-  const onCommentTextChange = useCallback((value: string) => {
-    dispatch(addCommentFormActions.setText(value));
-  }, [dispatch]);
+  const onCommentTextChange = useCallback(
+    (value: string) => {
+      dispatch(addCommentFormActions.setText(value));
+    },
+    [dispatch],
+  );
 
   const onSendHandler = useCallback(() => {
     onSendComment(text || '');
@@ -59,10 +62,7 @@ const AddCommentForm = (props: AddCommentFormProps) => {
           value={text}
           onChange={onCommentTextChange}
         />
-        <Button
-          theme={ButtonTheme.OUTLINE}
-          onClick={onSendHandler}
-        >
+        <Button theme={ButtonTheme.OUTLINE} onClick={onSendHandler}>
           {t('Отправить')}
         </Button>
       </HStack>

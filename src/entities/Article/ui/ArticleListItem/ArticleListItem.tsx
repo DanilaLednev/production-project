@@ -1,15 +1,12 @@
 import { HTMLAttributeAnchorTarget, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { ArticleBlockType, ArticleView } from '../../model/consts/articleConsts';
 import {
-  Article,
-  ArticleTextBlock,
-
-} from '../../model/types/article';
-import {
-  ArticleTextBlockComponents,
-} from '../ArticleTextBlockComponents/ArticleTextBlockComponents';
+  ArticleBlockType,
+  ArticleView,
+} from '../../model/consts/articleConsts';
+import { Article, ArticleTextBlock } from '../../model/types/article';
+import { ArticleTextBlockComponents } from '../ArticleTextBlockComponents/ArticleTextBlockComponents';
 
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { getRoutArticleDetails } from '@/shared/const/router';
@@ -33,12 +30,7 @@ interface ArticleListItemProps {
 }
 
 export const ArticleListItem = memo((props: ArticleListItemProps) => {
-  const {
-    className,
-    article,
-    view,
-    target,
-  } = props;
+  const { className, article, view, target } = props;
   const { t } = useTranslation('article');
 
   const types = <Text text={article.type.join(', ')} className={cls.types} />;
@@ -50,7 +42,9 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
   );
 
   if (view === ArticleView.BIG) {
-    const textBlock = article.blocks.find((block) => block.type === ArticleBlockType.TEXT) as ArticleTextBlock;
+    const textBlock = article.blocks.find(
+      (block) => block.type === ArticleBlockType.TEXT,
+    ) as ArticleTextBlock;
     return (
       <div
         data-testid="ArticleListItem"
@@ -71,18 +65,14 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
             className={cls.img}
           />
           {textBlock && (
-            <ArticleTextBlockComponents block={textBlock} className={cls.textBlock} />
+            <ArticleTextBlockComponents
+              block={textBlock}
+              className={cls.textBlock}
+            />
           )}
           <div className={cls.footer}>
-            <AppLink
-              target={target}
-              to={getRoutArticleDetails(article.id)}
-            >
-              <Button
-                theme={ButtonTheme.OUTLINE}
-              >
-                {t('Читать далее')}
-              </Button>
+            <AppLink target={target} to={getRoutArticleDetails(article.id)}>
+              <Button theme={ButtonTheme.OUTLINE}>{t('Читать далее')}</Button>
             </AppLink>
 
             {views}
@@ -101,7 +91,12 @@ export const ArticleListItem = memo((props: ArticleListItemProps) => {
     >
       <Card className={cls.card}>
         <div className={cls.imageWrapper}>
-          <AppImage fallback={<Skeleton width={200} height={200} />} src={article.img} alt={article.title} className={cls.img} />
+          <AppImage
+            fallback={<Skeleton width={200} height={200} />}
+            src={article.img}
+            alt={article.title}
+            className={cls.img}
+          />
           <Text text={article.createdAt} className={cls.date} />
         </div>
         <div className={cls.infoWrapper}>

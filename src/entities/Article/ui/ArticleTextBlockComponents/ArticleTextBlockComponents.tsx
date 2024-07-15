@@ -10,21 +10,23 @@ import cls from './ArticleTextBlockComponents.module.scss';
 
 interface ArticleTextBlockComponentsProps {
   className?: string;
-  block: ArticleTextBlock
+  block: ArticleTextBlock;
 }
 
-export const ArticleTextBlockComponents = memo((props: ArticleTextBlockComponentsProps) => {
-  const { className, block } = props;
-  const { t } = useTranslation();
+export const ArticleTextBlockComponents = memo(
+  (props: ArticleTextBlockComponentsProps) => {
+    const { className, block } = props;
+    const { t } = useTranslation();
 
-  return (
-    <div className={classNames(cls.ArticleTextBlockComponents, {}, [className])}>
-      {block.title && (
-        <Text title={block.title} className={cls.title} />
-      )}
-      {block.paragraphs.map((paragraph) => (
-        <Text key={paragraph} text={paragraph} className={cls.paragraph} />
-      ))}
-    </div>
-  );
-});
+    return (
+      <div
+        className={classNames(cls.ArticleTextBlockComponents, {}, [className])}
+      >
+        {block.title && <Text title={block.title} className={cls.title} />}
+        {block.paragraphs.map((paragraph) => (
+          <Text key={paragraph} text={paragraph} className={cls.paragraph} />
+        ))}
+      </div>
+    );
+  },
+);

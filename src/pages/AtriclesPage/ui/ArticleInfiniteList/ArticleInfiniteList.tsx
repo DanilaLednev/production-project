@@ -25,7 +25,13 @@ export const ArticleInfiniteList = (props: ArticleInfiniteListProps) => {
   const view = useSelector(getArticlesPageView);
 
   if (error) {
-    return <Text align={TextAlign.CENTER} theme={TextTheme.ERROR} title={t('Ошибка при загрузке статьи')} />;
+    return (
+      <Text
+        align={TextAlign.CENTER}
+        theme={TextTheme.ERROR}
+        title={t('Ошибка при загрузке статьи')}
+      />
+    );
   }
 
   return (

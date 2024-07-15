@@ -13,7 +13,7 @@ export const loginSlice = createSlice({
   name: 'login',
   initialState,
   reducers: {
-    setUsername: (state, action:PayloadAction<string>) => {
+    setUsername: (state, action: PayloadAction<string>) => {
       state.username = action.payload;
     },
     setUserPassword: (state, action: PayloadAction<string>) => {

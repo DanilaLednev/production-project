@@ -6,7 +6,7 @@ import { Country } from '../../model/types/country';
 import { ListBox } from '@/shared/ui/Popups';
 
 interface CountrySelectProps {
-  className?: string
+  className?: string;
   value?: Country;
   onChange?: (value: Country) => void;
   readOnly?: boolean;
@@ -21,20 +21,25 @@ interface CountrySelectProps {
 // ];
 
 export const CountrySelect = memo((props: CountrySelectProps) => {
-  const {
-    className,
-    value,
-    onChange,
-    readOnly,
-  } = props;
+  const { className, value, onChange, readOnly } = props;
 
   const { t } = useTranslation();
 
-  const onChangeHandler = useCallback((value:string) => {
-    onChange?.(value as Country);
-  }, [onChange]);
+  const onChangeHandler = useCallback(
+    (value: string) => {
+      onChange?.(value as Country);
+    },
+    [onChange],
+  );
 
-  const options = useMemo(() => Object.entries(Country).map((val) => ({ value: val[0], content: val[1] })), []);
+  const options = useMemo(
+    () =>
+      Object.entries(Country).map((val) => ({
+        value: val[0],
+        content: val[1],
+      })),
+    [],
+  );
 
   return (
     <ListBox

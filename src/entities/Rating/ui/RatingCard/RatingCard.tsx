@@ -17,7 +17,7 @@ interface RatingCardProps {
   title?: string;
   feedbackTitle?: string;
   hasFeedback?: boolean;
-  rate?: number
+  rate?: number;
   onCancel?: (starsCount: number) => void;
   onAccept?: (starsCount: number, feedback?: string) => void;
 }
@@ -38,14 +38,17 @@ export const RatingCard = memo((props: RatingCardProps) => {
   const [starsCount, setStarsCount] = useState(rate);
   const [feedback, setFeedback] = useState('');
 
-  const onSelectStars = useCallback((selectedStarsCount: number) => {
-    setStarsCount(selectedStarsCount);
-    if (hasFeedback) {
-      setIsModalOpen(true);
-    } else {
-      onAccept?.(selectedStarsCount);
-    }
-  }, [hasFeedback, onAccept]);
+  const onSelectStars = useCallback(
+    (selectedStarsCount: number) => {
+      setStarsCount(selectedStarsCount);
+      if (hasFeedback) {
+        setIsModalOpen(true);
+      } else {
+        onAccept?.(selectedStarsCount);
+      }
+    },
+    [hasFeedback, onAccept],
+  );
 
   const acceptHandler = useCallback(() => {
     setIsModalOpen(false);
@@ -66,7 +69,6 @@ export const RatingCard = memo((props: RatingCardProps) => {
         value={feedback}
         onChange={setFeedback}
       />
-
     </>
   );
 
@@ -78,7 +80,11 @@ export const RatingCard = memo((props: RatingCardProps) => {
     >
       <VStack align="center" gap="8">
         <Text title={starsCount ? t('Спасибо за оценку!') : title} />
-        <StarRating selectedStars={starsCount} size={40} onSelect={onSelectStars} />
+        <StarRating
+          selectedStars={starsCount}
+          size={40}
+          onSelect={onSelectStars}
+        />
       </VStack>
       <BrowserView>
         <Modal isOpen={isModalOpen} lazy>
@@ -93,10 +99,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
                 {t('Закрыть')}
               </Button>
 
-              <Button
-                onClick={acceptHandler}
-                data-testid="RatingCard.Send"
-              >
+              <Button onClick={acceptHandler} data-testid="RatingCard.Send">
                 {t('Отправить')}
               </Button>
             </HStack>

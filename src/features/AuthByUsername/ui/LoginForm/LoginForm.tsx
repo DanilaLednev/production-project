@@ -22,8 +22,8 @@ import { Text, TextTheme } from '@/shared/ui/Text';
 import cls from './LoginForm.module.scss';
 
 export interface LoginFormProps {
-  className?: string,
-  onSuccess: () => void,
+  className?: string;
+  onSuccess: () => void;
 }
 
 const initialReducers: ReducerList = {
@@ -38,13 +38,19 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   const isLoading = useSelector(getLoginIsLoading);
   const error = useSelector(getLoginError);
 
-  const onChangeUsername = useCallback((value: string) => {
-    dispatch(loginActions.setUsername(value));
-  }, [dispatch]);
+  const onChangeUsername = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUsername(value));
+    },
+    [dispatch],
+  );
 
-  const onChangePassword = useCallback((value: string) => {
-    dispatch(loginActions.setUserPassword(value));
-  }, [dispatch]);
+  const onChangePassword = useCallback(
+    (value: string) => {
+      dispatch(loginActions.setUserPassword(value));
+    },
+    [dispatch],
+  );
 
   const onLoginClick = useCallback(async () => {
     const result = await dispatch(loginByUsername({ username, password }));
@@ -54,15 +60,17 @@ const LoginForm = memo(({ className, onSuccess }: LoginFormProps) => {
   }, [dispatch, onSuccess, password, username]);
 
   return (
-    <DynamicModuleLoader
-      removeAfterUnmount
-      reducers={initialReducers}
-    >
+    <DynamicModuleLoader removeAfterUnmount reducers={initialReducers}>
       <div className={classNames(cls.LoginForm, {}, [className])}>
         <Text title={t('Форма авторизации')} />
-        { error && <Text text={t('Вы ввели неверный логин или пароль')} theme={TextTheme.ERROR} />}
+        {error && (
+          <Text
+            text={t('Вы ввели неверный логин или пароль')}
+            theme={TextTheme.ERROR}
+          />
+        )}
         <Input
-        // autoFocus
+          // autoFocus
           type="text"
           className={cls.input}
           placeholder={t('Введите username')}
