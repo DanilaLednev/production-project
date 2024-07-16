@@ -8,6 +8,7 @@ import { articlePageReducer } from '../../model/slices/ArticlePageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 
+import { useArticleItemById } from '@/pages/AtriclesPage/model/selectors/articlesPageSelectors';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
   DynamicModuleLoader,
@@ -32,6 +33,9 @@ const ArticlesPage = (props: ArticlesPageProps) => {
   const { t } = useTranslation('article');
   const dispatch = useAppDispatch();
   const [searchParams] = useSearchParams();
+  const articleItem = useArticleItemById('1');
+
+  console.log('articleItem', articleItem);
 
   const onLoadNextPart = useCallback(() => {
     dispatch(fetchNextArticlesPage());

@@ -58,7 +58,7 @@ export const StarRating = (props: StarRatingProps) => {
           onMouseLeave={onLeave}
           onMouseEnter={onHover(starNumber)}
           onClick={onClick(starNumber)}
-          data-testId={`StarRating.${starNumber}`}
+          data-testid={`StarRating.${starNumber}`}
           data-slected={currentStarsCount >= starNumber}
         />
       ))}
