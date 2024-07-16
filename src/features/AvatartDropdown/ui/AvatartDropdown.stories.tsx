@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { AvatarDropdown } from './AvatarDropdown';
 
 export default {
-  title: 'feature/AvatartDropdown',
+  title: 'features/AvatartDropdown',
   component: AvatarDropdown,
   argTypes: {
     backgroundColor: { control: 'color' },
