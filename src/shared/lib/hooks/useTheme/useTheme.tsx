@@ -27,7 +27,7 @@ export function useTheme(): UseThemeResult {
         newTheme = Theme.LIGHT;
     }
     setTheme?.(newTheme);
-    // localStorage.setItem(LOCAL_STORAGE_THEME_KEY, newTheme);
+
     saveAction?.(newTheme);
   };
 

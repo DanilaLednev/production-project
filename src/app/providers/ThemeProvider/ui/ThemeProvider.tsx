@@ -3,10 +3,7 @@ import React, { ReactNode, useEffect, useMemo, useState } from 'react';
 import { ThemeContext } from '../../../../shared/lib/context/ThemeContext';
 
 import { useJsonSettings } from '@/entities/User/model/selectors/jsonSettings';
-import { LOCAL_STORAGE_THEME_KEY } from '@/shared/const/localstorage';
 import { Theme } from '@/shared/const/theme';
-
-
 
 interface ThemeProviderProps {
   initialTheme?: Theme;
@@ -15,17 +12,22 @@ interface ThemeProviderProps {
 
 const ThemeProvider = (props: ThemeProviderProps) => {
   const { initialTheme, children } = props;
-  const { theme: defaultTheme = Theme.LIGHT } = useJsonSettings();
-  const [theme, setTheme] = useState<Theme>(initialTheme || defaultTheme);
+  const { theme: defaultTheme } = useJsonSettings();
+  const [theme, setTheme] = useState<Theme>(
+    initialTheme || defaultTheme || Theme.LIGHT,
+  );
   const [isThemeInited, setIsThemeInited] = useState(false);
 
   useEffect(() => {
-    if (!isThemeInited) {
+    if (!isThemeInited && defaultTheme) {
       setTheme(defaultTheme);
       setIsThemeInited(true);
     }
-
   }, [isThemeInited, defaultTheme]);
+
+  // useEffect(() => {
+  //   document.body.className = theme;
+  // }, [theme]);
 
   const defaultProps = useMemo(
     () => ({
