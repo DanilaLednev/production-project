@@ -8,6 +8,7 @@ import { articlePageReducer } from '../../model/slices/ArticlePageSlice';
 import { ArticleInfiniteList } from '../ArticleInfiniteList/ArticleInfiniteList';
 import { ArticlePageFilters } from '../ArticlePageFilters/ArticlePageFilters';
 
+import { ArticlePageGreeting } from '@/features/articlePageGreeting';
 import { useArticleItemById } from '@/pages/AtriclesPage/model/selectors/articlesPageSelectors';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import {
@@ -53,6 +54,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
       >
         <ArticlePageFilters />
         <ArticleInfiniteList className={cls.list} />
+        <ArticlePageGreeting />
       </Page>
     </DynamicModuleLoader>
   );
