@@ -14,7 +14,11 @@ import {
   DynamicModuleLoader,
   ReducerList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
-import { getFeatureFlag, toggleFeatures } from '@/shared/lib/features';
+import {
+  getFeatureFlag,
+  ToggleFeatures,
+  toggleFeatures,
+} from '@/shared/lib/features';
 import { Card } from '@/shared/ui/Card';
 import { VStack } from '@/shared/ui/Stack';
 import { Page } from '@/widgets/Page';
@@ -52,7 +56,12 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         <VStack gap="16" max>
           <ArticleDetailsPageHeader />
           <ArticleDetails id={id} />
-          {articleRatingCard}
+          {/* {articleRatingCard} */}
+          <ToggleFeatures
+            feature="isArticleRatingEnabled"
+            on={<ArticleRating articleId={id} />}
+            off={<Card>{t('Скоро появится оценка статей!')}</Card>}
+          />
           <ArticleRecommendationsList />
           <ArticleDetailsComments id={id} />
         </VStack>
