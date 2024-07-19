@@ -8,9 +8,11 @@ import { AvatarDropdown } from '@/features/AvatartDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { getRoutArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
+import { ToggleFeatures } from '@/shared/lib/features';
 import { AppLink, AppLinkTheme } from '@/shared/ui/AppLink';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { HStack } from '@/shared/ui/Stack';
+import { Text, TextTheme } from '@/shared/ui/Text';
 
 import cls from './Navbar.module.scss';
 
@@ -33,19 +35,37 @@ export const Navbar = memo(({ className }: NavbarProps) => {
 
   if (authData) {
     return (
-      <header className={classNames(cls.Navbar, {}, [className])}>
-        <AppLink
-          to={getRoutArticleCreate()}
-          theme={AppLinkTheme.SECONDARY}
-          className={cls.createBtn}
-        >
-          {t('Создать статью')}
-        </AppLink>
-        <HStack className={cls.actions} gap="16">
-          <NotificationButton />
-          <AvatarDropdown />
-        </HStack>
-      </header>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <header className={classNames(cls.NavbarRedesigned, {}, [className])}>
+            <HStack gap="16" className={cls.actions}>
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+        off={
+          <header className={classNames(cls.Navbar, {}, [className])}>
+            <Text
+              className={cls.appName}
+              title={t('LD')}
+              theme={TextTheme.INVERTED}
+            />
+            <AppLink
+              to={getRoutArticleCreate()}
+              theme={AppLinkTheme.SECONDARY}
+              className={cls.createBtn}
+            >
+              {t('Создать статью')}
+            </AppLink>
+            <HStack gap="16" className={cls.actions}>
+              <NotificationButton />
+              <AvatarDropdown />
+            </HStack>
+          </header>
+        }
+      />
     );
   }
 
