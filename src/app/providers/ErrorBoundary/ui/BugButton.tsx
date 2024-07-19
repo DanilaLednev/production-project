@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
-import { Button } from '@/shared/ui/Button';
+import { Button } from '@/shared/ui/deprecated/Button';
 
-// ? компонент для тестирования
+//  компонент для тестирования
 export const BugButton = () => {
   const [error, setError] = useState(false);
   const { t } = useTranslation();

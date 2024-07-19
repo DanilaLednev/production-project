@@ -3,7 +3,7 @@ import { memo } from 'react';
 import { ArticleCodeBlock } from '../../model/types/article';
 
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { Code } from '@/shared/ui/Code';
+import { Code } from '@/shared/ui/deprecated/Code';
 
 import cls from './ArticleCodeBlockComponents.module.scss';
 

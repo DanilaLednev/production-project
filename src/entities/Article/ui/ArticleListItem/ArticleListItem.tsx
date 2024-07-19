@@ -11,14 +11,14 @@ import { ArticleTextBlockComponents } from '../ArticleTextBlockComponents/Articl
 import EyeIcon from '@/shared/assets/icons/eye.svg';
 import { getRoutArticleDetails } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { AppImage } from '@/shared/ui/AppImage';
-import { AppLink } from '@/shared/ui/AppLink';
-import { Avatar } from '@/shared/ui/Avatar';
-import { Button, ButtonTheme } from '@/shared/ui/Button';
-import { Card } from '@/shared/ui/Card';
-import { Icon } from '@/shared/ui/Icon';
-import { Skeleton } from '@/shared/ui/Skeleton';
-import { Text } from '@/shared/ui/Text';
+import { AppImage } from '@/shared/ui/deprecated/AppImage';
+import { AppLink } from '@/shared/ui/deprecated/AppLink';
+import { Avatar } from '@/shared/ui/deprecated/Avatar';
+import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import { Card } from '@/shared/ui/deprecated/Card';
+import { Icon } from '@/shared/ui/deprecated/Icon';
+import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { Text } from '@/shared/ui/deprecated/Text';
 
 import cls from './ArticleListItem.module.scss';
 

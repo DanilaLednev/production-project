@@ -12,9 +12,9 @@ import { CommentList } from '@/entities/Comment';
 import { AddCommentForm } from '@/features/addCommentForm';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect';
-import { Loader } from '@/shared/ui/Loader';
-import { VStack } from '@/shared/ui/Stack';
-import { Text, TextSize } from '@/shared/ui/Text';
+import { Loader } from '@/shared/ui/deprecated/Loader';
+import { VStack } from '@/shared/ui/deprecated/Stack';
+import { Text, TextSize } from '@/shared/ui/deprecated/Text';
 
 interface ArticleDetailsCommentsProps {
   className?: string;

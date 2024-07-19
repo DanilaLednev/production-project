@@ -9,7 +9,7 @@ import {
 import { getArticles } from '../../model/slices/ArticlePageSlice';
 
 import { ArticleList } from '@/entities/Article';
-import { Text, TextAlign, TextTheme } from '@/shared/ui/Text';
+import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
 
 interface ArticleInfiniteListProps {
   className?: string;
