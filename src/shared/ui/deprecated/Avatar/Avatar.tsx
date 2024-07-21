@@ -3,9 +3,9 @@ import { CSSProperties, useMemo } from 'react';
 import UserIcon from '../../../assets/icons/user.svg';
 
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
-import { AppImage } from '@/shared/ui/deprecated/AppImage';
 import { Icon } from '@/shared/ui/deprecated/Icon';
 import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { AppImage } from '@/shared/ui/redesigned/AppImage';
 
 import cls from './Avatar.module.scss';
 

@@ -5,8 +5,8 @@ import { useParams } from 'react-router-dom';
 import { EditableProfileCard } from '@/features/editableProfileCard';
 import { ProfileRating } from '@/features/profileRating';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { VStack } from '@/shared/ui/deprecated/Stack';
 import { Text, TextAlign, TextTheme } from '@/shared/ui/deprecated/Text';
+import { VStack } from '@/shared/ui/redesigned/Stack';
 import { Page } from '@/widgets/Page';
 
 interface ProfilePageProps {
