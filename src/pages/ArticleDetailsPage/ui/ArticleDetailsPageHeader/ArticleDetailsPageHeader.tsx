@@ -7,7 +7,10 @@ import { getCanEditArticle } from '../../model/selectors/article';
 
 import { getArticleDetailsData } from '@/entities/Article';
 import { getUserAuthData } from '@/entities/User';
-import { getRoutArticleDetails, getRoutArticles } from '@/shared/const/router';
+import {
+  getRouteArticleDetails,
+  getRouteArticles,
+} from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { HStack } from '@/shared/ui/deprecated/Stack';
@@ -27,12 +30,12 @@ export const ArticleDetailsPageHeader = (
   const canEdit = useSelector(getCanEditArticle);
 
   const onBackToList = useCallback(() => {
-    navigate(getRoutArticles());
+    navigate(getRouteArticles());
   }, [navigate]);
 
   const onEditArticle = useCallback(() => {
     if (article) {
-      navigate(getRoutArticleDetails(article.id));
+      navigate(getRouteArticleDetails(article.id));
     }
   }, [article, navigate]);
 

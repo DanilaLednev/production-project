@@ -15,10 +15,10 @@ export enum AppRoutes {
 export const getRouteMain = () => '/';
 export const getRouteAbout = () => '/about';
 export const getRouteProfile = (id: string) => `/profile/${id}`;
-export const getRoutArticles = () => '/articles';
-export const getRoutArticleDetails = (id: string) => `/articles/${id}`;
-export const getRoutArticleCreate = () => '/articles/create';
-export const getRoutArticleEdit = (id: string) => `/articles/${id}/edit`;
+export const getRouteArticles = () => '/articles';
+export const getRouteArticleDetails = (id: string) => `/articles/${id}`;
+export const getRouteArticleCreate = () => '/articles/create';
+export const getRouteArticleEdit = (id: string) => `/articles/${id}/edit`;
 export const getRouteAdmin = () => '/admin';
 export const getRouteForbidden = () => '/forbidden';
 
