@@ -9,7 +9,6 @@ import { Icon } from '@/shared/ui/redesigned/Icon';
 
 import cls from './Avatar.module.scss';
 
-
 interface AvatarProps {
   className?: string;
   src?: string;
