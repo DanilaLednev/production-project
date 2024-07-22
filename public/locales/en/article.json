@@ -6,11 +6,11 @@
   "Читать далее": "Read more...",
   "Сортировать По": "Sort by",
   "по": "by",
-  "возрастанию": "ascending",
-  "убыванию": "decreasing",
-  "дате создания": "creation date",
-  "названию": "name",
-  "количеству просмотров": "number of views",
+  "Возрастанию": "Ascending",
+  "Убыванию": "Decreasing",
+  "Дате\u00A0создания": "Creation\u00A0date",
+  "Названию": "Name",
+  "Количеству просмотров": "Number of views",
   "Поиск": "Search",
   "Все статьи": "All articles",
   "Айти": "IT",
@@ -25,5 +25,6 @@
   "Ошибка при загрузке статьи": "Error loading article",
   "Оцените статью": "Rate this article",
   "Оставьте свой отзыв о статье, это поможет улучшить качество": "Leave your feedback on the article, this will help improve the quality",
-  "Скоро появится оценка статей!": "Article ratings coming soon!"
+  "Скоро появится оценка статей!": "Article ratings coming soon!",
+  "Сортировать по": "Sort by:"
 }

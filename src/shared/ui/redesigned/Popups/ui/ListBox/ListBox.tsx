@@ -5,9 +5,11 @@ import { HStack } from '../../../Stack';
 import { mapDirectionClass } from '../../styles/consts';
 import popupCls from '../../styles/popup.module.scss';
 
+import ArrowIcon from '@/shared/assets/iconsRedesign/union.svg';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { DropdownDirection } from '@/shared/types/ui';
 import { Button } from '@/shared/ui/redesigned/Button';
+import { Icon } from '@/shared/ui/redesigned/Icon';
 
 import cls from './ListBox.module.scss';
 
@@ -57,7 +59,11 @@ export function ListBox<T extends string>(props: ListBoxProps<T>) {
         onChange={onChange}
       >
         <HListBox.Button as="div" className={cls.trigger}>
-          <Button variant="filled" disabled={readonly}>
+          <Button
+            variant="filled"
+            disabled={readonly}
+            addonRight={<Icon Svg={ArrowIcon} />}
+          >
             {selectedItem?.content ?? defaultValue}
           </Button>
         </HListBox.Button>
