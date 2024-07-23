@@ -39,7 +39,7 @@ export const SidebarItem = ({ item, collapsed }: SidebarItemProps) => {
           })}
           activeClassName={cls.active}
         >
-          <Icon Svg={item.Icon} />
+          <Icon Svg={item.Icon} className={cls.icon} />
           <span className={cls.link}>{t(item.text)}</span>
         </AppLink>
       }
