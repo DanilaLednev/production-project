@@ -88,7 +88,8 @@ module.exports = {
           'refName',
           'feature',
           'variant',
-          'color'
+          'color',
+          'size'
         ],
       },
     ],

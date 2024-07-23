@@ -46,6 +46,7 @@ export const ArticlesFilters = (props: ArticlesFiltersProps) => {
     >
       <VStack gap="32">
         <Input
+          size="s"
           placeholder={t('Поиск')}
           value={search}
           onChange={onChangeSearch}
