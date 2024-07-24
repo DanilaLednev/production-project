@@ -26,8 +26,9 @@ export const NotificationItem = (props: NotificationItemProps) => {
       feature="isAppRedesigned"
       on={
         <Card
-          variant="outlined"
-          className={classNames(cls.NotificationItem, {}, [className])}
+          className={classNames(cls.NotificationItemRedesigned, {}, [
+            className,
+          ])}
         >
           <Text title={item.title} text={item.description} />
         </Card>
