@@ -2,6 +2,8 @@ import { memo } from 'react';
 
 import { ArticleView } from '../../model/consts/articleConsts';
 
+import clsR from './ArticleListItemRedesigned/ArticleListItemRedesigned.module.scss';
+
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { toggleFeatures } from '@/shared/lib/features';
 import { Card as CardDeprecated } from '@/shared/ui/deprecated/Card';
@@ -19,6 +21,12 @@ interface ArticleListItemSkeletonProps {
 export const ArticleListItemSkeleton = memo(
   (props: ArticleListItemSkeletonProps) => {
     const { className, view } = props;
+
+    const mainClass = toggleFeatures({
+      name: 'isAppRedesigned',
+      on: () => clsR.ArticleListItemRedesigned,
+      off: () => cls.ArticleListItem,
+    });
 
     const Skeleton = toggleFeatures({
       name: 'isAppRedesigned',
@@ -57,9 +65,7 @@ export const ArticleListItemSkeleton = memo(
     }
 
     return (
-      <div
-        className={classNames(cls.ArticleListItem, {}, [className, cls[view]])}
-      >
+      <div className={classNames(mainClass, {}, [className, cls[view]])}>
         <Card className={cls.card}>
           <div className={cls.imageWrapper}>
             <Skeleton width={200} height={200} className={cls.img} />
