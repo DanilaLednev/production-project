@@ -124,9 +124,7 @@
       "views": 5204,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -148,9 +146,7 @@
       "views": 94002,
       "createdAt": "26.02.2019",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -172,9 +168,7 @@
       "views": 10222,
       "createdAt": "24.01.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -196,9 +190,7 @@
       "views": 10222,
       "createdAt": "26.02.2020",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -220,9 +212,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -244,9 +234,7 @@
       "views": 100,
       "createdAt": "21.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -268,9 +256,7 @@
       "views": 102222,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -292,9 +278,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -316,9 +300,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -340,9 +322,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -364,9 +344,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -388,9 +366,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -412,9 +388,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -436,9 +410,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -460,9 +432,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -484,9 +454,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "IT"
-      ],
+      "type": ["IT"],
       "blocks": [
         {
           "id": "1",
@@ -508,9 +476,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "ECONOMICS"
-      ],
+      "type": ["ECONOMICS"],
       "blocks": [
         {
           "id": "1",
@@ -532,9 +498,7 @@
       "views": 1022,
       "createdAt": "26.02.2024",
       "userId": "1",
-      "type": [
-        "SCIENCE"
-      ],
+      "type": ["SCIENCE"],
       "blocks": [
         {
           "id": "1",
@@ -616,16 +580,14 @@
       "id": "1",
       "username": "admin",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true,
         "isAppRedesigned": true
       },
       "jsonSettings": {
-        "theme": "app_orange_theme",
+        "theme": "app_light_theme",
         "isFirstVisit": true,
         "settingsPageHasBeenOpen": false,
         "isArticlesPageWasOpened": true
@@ -636,9 +598,7 @@
       "id": "2",
       "username": "user",
       "password": "123",
-      "roles": [
-        "USER"
-      ],
+      "roles": ["USER"],
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true,
@@ -656,9 +616,7 @@
       "id": "3",
       "username": "manager",
       "password": "123",
-      "roles": [
-        "MANAGER"
-      ],
+      "roles": ["MANAGER"],
       "features": {
         "isArticleRatingEnabled": false,
         "isCounterEnabled": true
@@ -674,9 +632,7 @@
       "id": "4",
       "username": "testuser",
       "password": "123",
-      "roles": [
-        "ADMIN"
-      ],
+      "roles": ["ADMIN"],
       "features": {
         "isArticleRatingEnabled": true,
         "isCounterEnabled": true
