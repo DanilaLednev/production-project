@@ -217,4 +217,5 @@ of: функция, которая отработает после Выключ�
 - [notificationButton](/src/features/notificationButton)
 - [profileRating](/src/features/profileRating)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
+- [uiDesignSwitcher](src/features/uiDesignSwitcher)
 - [UI](/src/features/UI)

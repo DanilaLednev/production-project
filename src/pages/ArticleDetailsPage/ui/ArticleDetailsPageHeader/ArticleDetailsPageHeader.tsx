@@ -9,6 +9,7 @@ import { getArticleDetailsData } from '@/entities/Article';
 import { getUserAuthData } from '@/entities/User';
 import {
   getRouteArticleDetails,
+  getRouteArticleEdit,
   getRouteArticles,
 } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
@@ -35,7 +36,7 @@ export const ArticleDetailsPageHeader = (
 
   const onEditArticle = useCallback(() => {
     if (article) {
-      navigate(getRouteArticleDetails(article.id));
+      navigate(getRouteArticleEdit(article.id));
     }
   }, [article, navigate]);
 
