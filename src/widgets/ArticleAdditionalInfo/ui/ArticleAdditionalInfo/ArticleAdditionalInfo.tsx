@@ -21,10 +21,7 @@ export const ArticleAdditionalInfo = (props: ArticleAdditionalInfoProps) => {
   const { t } = useTranslation();
 
   return (
-    <VStack
-      className={classNames('', {}, [className])}
-      gap="32"
-    >
+    <VStack className={classNames('', {}, [className])} gap="32">
       <HStack gap="8">
         <Avatar src={author.avatar} size={32} />
         <Text text={author.username} bold />
