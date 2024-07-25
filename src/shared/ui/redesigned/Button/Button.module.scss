@@ -46,14 +46,14 @@
 
 .outline {
   background: none;
-  border: 1px solid var(--icon-redesigned);
+  border: 2px solid var(--icon-redesigned);
   outline-color: transparent;
   padding: 8px 16px;
   border-radius: 34px;
   transition: 0.3s;
 
   &:hover {
-    border: 1px solid var(--accent-redesigned);
+    border: 2px solid var(--accent-redesigned);
   }
 }
 
