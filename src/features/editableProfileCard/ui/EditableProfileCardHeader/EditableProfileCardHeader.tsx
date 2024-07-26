@@ -66,7 +66,7 @@ export const EditableProfileCardHeader = (
                 {readonly ? (
                   <Button
                     onClick={onEdit}
-                    data-testid="EditableProfileCardHeader.EditButton"
+                    data-testid="EditableProfileCardHeaderButton.EditButton"
                   >
                     {t('Редактировать')}
                   </Button>
@@ -74,14 +74,14 @@ export const EditableProfileCardHeader = (
                   <HStack gap="8">
                     <Button
                       onClick={onCancelEdit}
-                      data-testid="EditableProfileCardHeader.CancelButton"
+                      data-testid="EditableProfileCardHeaderButton.CancelButton"
                       color="error"
                     >
                       {t('Отменить')}
                     </Button>
                     <Button
                       onClick={onSave}
-                      data-testid="EditableProfileCardHeader.SaveButton"
+                      data-testid="EditableProfileCardHeaderButton.SaveButton"
                       color="success"
                     >
                       {t('Сохранить')}
@@ -106,7 +106,7 @@ export const EditableProfileCardHeader = (
                 <ButtonDeprecated
                   theme={ButtonTheme.OUTLINE}
                   onClick={onEdit}
-                  data-testid="EditableProfileCardHeader.EditButton"
+                  data-testid="EditableProfileCardHeaderButton.EditButton"
                 >
                   {t('Редактировать')}
                 </ButtonDeprecated>
@@ -115,14 +115,14 @@ export const EditableProfileCardHeader = (
                   <ButtonDeprecated
                     theme={ButtonTheme.OUTLINE_RED}
                     onClick={onCancelEdit}
-                    data-testid="EditableProfileCardHeader.CancelButton"
+                    data-testid="EditableProfileCardHeaderButton.CancelButton"
                   >
                     {t('Отменить')}
                   </ButtonDeprecated>
                   <ButtonDeprecated
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSave}
-                    data-testid="EditableProfileCardHeader.SaveButton"
+                    data-testid="EditableProfileCardHeaderButton.SaveButton"
                   >
                     {t('Сохранить')}
                   </ButtonDeprecated>
