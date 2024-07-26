@@ -218,4 +218,5 @@ of: функция, которая отработает после Выключ�
 - [profileRating](/src/features/profileRating)
 - [ThemeSwitcher](/src/features/ThemeSwitcher)
 - [uiDesignSwitcher](src/features/uiDesignSwitcher)
+- [scrollToTopButton](src/features/scrollToTopButton)
 - [UI](/src/features/UI)

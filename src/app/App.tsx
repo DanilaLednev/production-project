@@ -5,6 +5,7 @@ import './styles/index.scss';
 
 import { useSelector } from 'react-redux';
 
+import { useAppToolbar } from './lib/useAppToolbar';
 import { AppRouter } from './providers/router';
 
 import { getUserInited, initAuthData } from '@/entities/User';
@@ -16,13 +17,14 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
+import { ScrollToolbar } from '@/widgets/ScrollToolbar';
 import { Sidebar } from '@/widgets/Sidebar';
 
 export const App = () => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
-
   const inited = useSelector(getUserInited);
+  const toolbar = useAppToolbar();
 
   useEffect(() => {
     if (!inited) {
@@ -66,6 +68,7 @@ export const App = () => {
               sidebar={<Sidebar />}
               header={<Navbar />}
               content={<AppRouter />}
+              toolbar={toolbar}
             />
           </Suspense>
         </div>
