@@ -6,6 +6,7 @@ import './styles/index.scss';
 import { useSelector } from 'react-redux';
 
 import { useAppToolbar } from './lib/useAppToolbar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 import { AppRouter } from './providers/router';
 
 import { getUserInited, initAuthData } from '@/entities/User';
@@ -18,7 +19,6 @@ import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
 import { Sidebar } from '@/widgets/Sidebar';
-import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
 const App = memo(() => {
   const { theme } = useTheme();
