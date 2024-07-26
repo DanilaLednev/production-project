@@ -8,10 +8,16 @@ import { AvatarDropdown } from '@/features/AvatartDropdown';
 import { NotificationButton } from '@/features/notificationButton';
 import { getRouteArticleCreate } from '@/shared/const/router';
 import { classNames } from '@/shared/lib/classNames/classNames';
-import { ToggleFeatures } from '@/shared/lib/features';
+import { toggleFeatures, ToggleFeatures } from '@/shared/lib/features';
 import { AppLink, AppLinkTheme } from '@/shared/ui/deprecated/AppLink';
-import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
+import {
+  Button as ButtonDeprecated,
+  ButtonTheme,
+} from '@/shared/ui/deprecated/Button';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
 import { Text, TextTheme } from '@/shared/ui/deprecated/Text';
+import { Button } from '@/shared/ui/redesigned/Button';
+import { Skeleton as SkeletonRedesigned } from '@/shared/ui/redesigned/Skeleton';
 import { HStack } from '@/shared/ui/redesigned/Stack';
 
 import cls from './Navbar.module.scss';
@@ -32,6 +38,12 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   const onShowModal = useCallback(() => {
     setIsAuthModal(true);
   }, []);
+
+  const mainClass = toggleFeatures({
+    name: 'isAppRedesigned',
+    on: () => cls.NavbarRedesigned,
+    off: () => cls.Navbar,
+  });
 
   if (authData) {
     return (
@@ -70,14 +82,25 @@ export const Navbar = memo(({ className }: NavbarProps) => {
   }
 
   return (
-    <header className={classNames(cls.Navbar, {}, [className])}>
-      <Button
-        theme={ButtonTheme.CLEAR_INVERTED}
-        className={cls.links}
-        onClick={onShowModal}
-      >
-        {t('Войти')}
-      </Button>
+    <header className={classNames(mainClass, {}, [className])}>
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={
+          <Button variant="clear" className={cls.links} onClick={onShowModal}>
+            {t('Войти')}
+          </Button>
+        }
+        off={
+          <ButtonDeprecated
+            theme={ButtonTheme.CLEAR_INVERTED}
+            className={cls.links}
+            onClick={onShowModal}
+          >
+            {t('Войти')}
+          </ButtonDeprecated>
+        }
+      />
+
       {isAuthModal && (
         <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
       )}

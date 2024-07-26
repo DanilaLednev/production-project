@@ -2,7 +2,6 @@ import { memo, useCallback, useState } from 'react';
 import { BrowserView, MobileView } from 'react-device-detect';
 import { useTranslation } from 'react-i18next';
 
-import { classNames } from '@/shared/lib/classNames/classNames';
 import { ToggleFeatures } from '@/shared/lib/features';
 import {
   Button as ButtonDeprecated,

@@ -15,7 +15,7 @@ import { Text } from '@/shared/ui/redesigned/Text';
 
 export const ProfileCardRedesignedSkeleton = () => {
   return (
-    <Card padding="24" max>
+    <Card padding="24" border="partial" max>
       <VStack gap="32" max>
         <HStack max justify="center">
           <Skeleton border="100%" width={128} height={128} />

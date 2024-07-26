@@ -8,6 +8,8 @@ export type ButtonVariant = 'clear' | 'outline' | 'filled';
 
 export type ButtonSize = 'm' | 'l' | 'xl';
 
+export type ButtonColor = 'normal' | 'success' | 'error';
+
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   className?: string;
   /**
@@ -34,6 +36,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
    * Увеличивает кнопку на всю свободную ширину
    */
   fullWidth?: boolean;
+  color?: ButtonColor;
 
   addonLeft?: ReactNode;
   addonRight?: ReactNode;
@@ -50,6 +53,7 @@ export const Button = memo((props: ButtonProps) => {
     size = 'm',
     addonLeft,
     addonRight,
+    color = 'normal',
     ...otherProps
   } = props;
 
@@ -67,6 +71,7 @@ export const Button = memo((props: ButtonProps) => {
         className,
         cls[variant],
         cls[size],
+        cls[color],
       ])}
       disabled={disabled}
       {...otherProps}

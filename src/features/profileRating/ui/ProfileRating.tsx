@@ -6,7 +6,10 @@ import { useGetProfileRating, useRateProfile } from '../api/profileRatingApi';
 
 import { RatingCard } from '@/entities/Rating';
 import { getUserAuthData } from '@/entities/User';
-import { Skeleton } from '@/shared/ui/deprecated/Skeleton';
+import { ToggleFeatures } from '@/shared/lib/features';
+import { Skeleton as SkeletonDeprecated } from '@/shared/ui/deprecated/Skeleton';
+import { Card } from '@/shared/ui/redesigned/Card';
+import { Skeleton } from '@/shared/ui/redesigned/Skeleton';
 
 interface ProfileRatingProps {
   className?: string;
@@ -58,18 +61,42 @@ export const ProfileRating = (props: ProfileRatingProps) => {
   );
 
   if (isLoading) {
-    return <Skeleton width="100%" height={120} />;
+    return (
+      <ToggleFeatures
+        feature="isAppRedesigned"
+        on={<Skeleton width="100%" height={120} border="20px" />}
+        off={<SkeletonDeprecated width="100%" height={120} />}
+      />
+    );
   }
 
   return (
-    <RatingCard
-      className={className}
-      rate={rating?.rate}
-      title={t('Оцените профиль')}
-      feedbackTitle={t('Оставьте свой отзыв о пользователе')}
-      hasFeedback
-      onCancel={onCancel}
-      onAccept={onAccept}
+    <ToggleFeatures
+      feature="isAppRedesigned"
+      on={
+        <Card max border="partial" padding="0">
+          <RatingCard
+            className={className}
+            rate={rating?.rate}
+            title={t('Оцените профиль')}
+            feedbackTitle={t('Оставьте свой отзыв о пользователе')}
+            hasFeedback
+            onCancel={onCancel}
+            onAccept={onAccept}
+          />
+        </Card>
+      }
+      off={
+        <RatingCard
+          className={className}
+          rate={rating?.rate}
+          title={t('Оцените профиль')}
+          feedbackTitle={t('Оставьте свой отзыв о пользователе')}
+          hasFeedback
+          onCancel={onCancel}
+          onAccept={onAccept}
+        />
+      }
     />
   );
 };
