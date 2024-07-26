@@ -23,11 +23,11 @@ const ThemeProvider = (props: ThemeProviderProps) => {
   const [isThemeInited, setIsThemeInited] = useState(false);
 
   useEffect(() => {
-    if (!isThemeInited && defaultTheme) {
-      setTheme(defaultTheme);
+    if (!isThemeInited && initialTheme) {
+      setTheme(initialTheme);
       setIsThemeInited(true);
     }
-  }, [isThemeInited, defaultTheme]);
+  }, [isThemeInited, initialTheme]);
 
   useEffect(() => {
     document.body.className = theme;

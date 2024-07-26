@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/order
-import { Suspense, useEffect } from 'react';
+import { memo, Suspense, useEffect } from 'react';
 
 import './styles/index.scss';
 
@@ -17,10 +17,10 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 import { Navbar } from '@/widgets/Navbar';
 import { PageLoader } from '@/widgets/PageLoader';
-import { ScrollToolbar } from '@/widgets/ScrollToolbar';
 import { Sidebar } from '@/widgets/Sidebar';
+import { withTheme } from './providers/ThemeProvider/ui/withTheme';
 
-export const App = () => {
+const App = memo(() => {
   const { theme } = useTheme();
   const dispatch = useAppDispatch();
   const inited = useSelector(getUserInited);
@@ -75,4 +75,6 @@ export const App = () => {
       }
     />
   );
-};
+});
+
+export default withTheme(App);
